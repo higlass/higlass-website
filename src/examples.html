@@ -50,7 +50,7 @@
 
   <header id="topbar">
     <div class="wrap flex-c flex-jc-sb">
-      <div class="flex-c">
+      <div class="flex-c branding-launch">
         <a href="." class="branding">
           <span class="higlass"><span class="higlass-hi">Hi</span>Glass</span>
         </a>
@@ -58,13 +58,13 @@
           Launch
         </a>
       </div>
-      <nav>
+      <nav class="flex-c flex-jc-e flex-a-s is-toggable">
         <ul class="flex-c flex-jc-e flex-a-s no-list-style">
           <li><a href="about.html">About</a></li>
           <li><a href="examples.html" class="is-active">Examples</a></li>
           <li><a href="data-sets.html">Datasets</a></li>
           <li><a href="docs.html">Docs</a></li>
-          <li class="flex-c flex-jc-c flex-a-s separated-left">
+          <li class="separated-left flex-c flex-jc-c">
             <a
               href="https://github.com/hms-dbmi?&q=higlass"
               target="_blank"
@@ -88,6 +88,9 @@
             </a>
           </li>
         </ul>
+        <button
+          class="menu-toggler c-hamburger c-hamburger--htx"><span></span>
+        </button>
       </nav>
     </div>
   </header>
