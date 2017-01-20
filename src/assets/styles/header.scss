@@ -114,6 +114,10 @@
         font-weight: bold;
         color: $primary;
         box-shadow: 0 2px 0 0 $primary;
+
+        &::before {
+          display: none;
+        }
       }
     }
 
