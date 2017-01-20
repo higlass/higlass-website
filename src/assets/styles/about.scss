@@ -19,3 +19,7 @@ li:first-child .person {
 .person + p {
   margin-top: 0;
 }
+
+#youtube {
+  @include ratio(0.553571429);  // 310 / 560
+}
