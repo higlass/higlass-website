@@ -5,7 +5,7 @@
   box-shadow: 0 2px 0 0 transparentize($black, 0.95);
   line-height: 2em;
 
-  .branding a:active,
+  .branding:active,
   nav li a:active {
     color: $primary;
     background: transparentize($primary, 0.8);
@@ -16,7 +16,7 @@
     }
   }
 
-  .branding a:focus,
+  .branding:focus,
   nav li a:focus {
     color: $black;
     background: transparentize($black, 0.9);
@@ -33,26 +33,48 @@
   }
 
   .branding {
+    position: relative;
+    display: block;
     font-weight: bold;
     color: $black;
+    box-shadow: none;
 
-    a {
-      position: relative;
-      display: block;
-      box-shadow: none;
+    @include underline($black, -2px, 2px);
 
-      @include underline($black, -2px, 2px);
+    &.is-active {
+      box-shadow: 0 2px 0 0 $primary;
+    }
 
-      &.is-active {
-        box-shadow: 0 2px 0 0 $primary;
-      }
+    &:hover .higlass-hi,
+    &:active .higlass-hi,
+    &:focus .higlass-hi,
+    &.is-active .higlass-hi {
+      color: $primary;
+    }
+  }
 
-      &:hover .higlass-hi,
-      &:active .higlass-hi,
-      &:focus .higlass-hi,
-      &.is-active .higlass-hi {
-        color: $primary;
-      }
+  .btn {
+    margin: 0.5rem 0.5rem 0.5rem 1rem;
+    padding: 0 0.5rem;
+    color: $gray-darker;
+    font-size: 0.625em;
+    line-height: 2em;
+    border: 0;
+    border-radius: 0.25rem;
+    box-shadow: none;
+    background: $gray-lighter;
+    transition: all $fast-transition $easing;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background: $black;
+    }
+
+    &.is-active,
+    &:active {
+      color: $white;
+      background: $primary;
     }
   }
 

@@ -26,7 +26,7 @@
 
       window.nightModus = parseInt(
         new Date().toLocaleTimeString().split(':')[0], 10
-      ) > 17;
+      ) > 19;
     </script>
 </head>
 
@@ -50,15 +50,17 @@
 
   <header id="topbar">
     <div class="wrap flex-c flex-jc-sb">
-      <div class="branding">
-        <a href=".">
+      <div class="flex-c">
+        <a href="." class="branding">
           <span class="higlass"><span class="higlass-hi">Hi</span>Glass</span>
+        </a>
+        <a href="visualization.html" class="btn is-uppercased is-active">
+          Launched
         </a>
       </div>
       <nav>
         <ul class="flex-c flex-jc-e flex-a-s no-list-style">
           <li><a href="about.html">About</a></li>
-          <li><a href="visualization.html" class="is-active">Visualization</a></li>
           <li><a href="examples.html">Examples</a></li>
           <li><a href="data-sets.html">Datasets</a></li>
           <li><a href="docs.html">Docs</a></li>
