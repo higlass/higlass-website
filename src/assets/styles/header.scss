@@ -1,0 +1,196 @@
+#topbar {
+  position: relative;
+  z-index: 2;
+  background: transparentize($white, 0.1);
+  box-shadow: 0 2px 0 0 transparentize($black, 0.95);
+  line-height: 2em;
+
+  .branding a:active,
+  nav li a:active {
+    color: $primary;
+    background: transparentize($primary, 0.8);
+    box-shadow: 0 2px 0 0 $primary;
+
+    &::before {
+      opacity: 0 !important;
+    }
+  }
+
+  .branding a:focus,
+  nav li a:focus {
+    color: $black;
+    background: transparentize($black, 0.9);
+    box-shadow: 0 2px 0 0 $black;
+    border-radius: 0;
+
+    &::before {
+      opacity: 0 !important;
+    }
+
+    &.is-active {
+      background: transparentize($primary, 0.8);
+    }
+  }
+
+  .branding {
+    font-weight: bold;
+    color: $black;
+
+    a {
+      position: relative;
+      display: block;
+      box-shadow: none;
+
+      @include underline($black, -2px, 2px);
+
+      &.is-active {
+        box-shadow: 0 2px 0 0 $primary;
+      }
+
+      &:hover .higlass-hi,
+      &:active .higlass-hi,
+      &:focus .higlass-hi,
+      &.is-active .higlass-hi {
+        color: $primary;
+      }
+    }
+  }
+
+  nav li {
+    line-height: inherit;
+
+    &.separated-left {
+      &::before {
+        content: '';
+        width: 1px;
+        margin: 0.25rem 0.5rem;
+        background: $gray-lightest;
+      }
+    }
+
+    a {
+      position: relative;
+      display: block;
+      margin: 0 0.175rem;
+      padding: 0 0.125rem;
+      box-shadow: none;
+      font-size: 0.85em;
+
+      @include underline($black, -2px, 2px);
+
+      &.icon-only {
+        &::before {
+          display: none;
+        }
+
+        &.flex-c {
+          display: flex;
+        }
+      }
+
+      &.is-active {
+        font-weight: bold;
+        color: $primary;
+        box-shadow: 0 2px 0 0 $primary;
+      }
+    }
+
+    .icon {
+      width: 0.9em;
+      height: 0.9em;
+    }
+  }
+
+  .disable-dark-theme {
+    display: none;
+  }
+}
+
+body.dark-theme #topbar {
+  background: rgba(34, 34, 34, 0.75);
+  box-shadow: 0 2px 0 0 transparentize($white, 0.95);
+
+  .branding a:active,
+  nav li a:active {
+    color: $white;
+    background: transparentize($white, 0.9);
+    box-shadow: 0 2px 0 0 $white;
+  }
+
+  .branding a:focus,
+  nav li a:focus {
+    color: $white;
+    background: transparentize($white, 0.9);
+    box-shadow: 0 2px 0 0 $white;
+
+    &.is-active {
+      background: transparentize($secondary, 0.85);
+    }
+  }
+
+  .branding {
+    color: $white;
+
+    a {
+      @include underline($white, -2px, 2px);
+
+      &:hover {
+        color: $white;
+      }
+
+      &.is-active {
+        box-shadow: 0 2px 0 0 $secondary;
+      }
+
+      &:hover .higlass-hi,
+      &:active .higlass-hi,
+      &:focus .higlass-hi,
+      &.is-active .higlass-hi {
+        color: $secondary;
+      }
+    }
+  }
+
+  nav li {
+    line-height: inherit;
+
+    &.separated-left {
+      &::before {
+        background: transparentize($white, 0.95);
+      }
+    }
+
+    a {
+      @include underline($white, -2px, 2px);
+
+      &.is-active,
+      &:hover.is-active {
+        color: $secondary;
+        box-shadow: 0 2px 0 0 $secondary;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      &:hover,
+      &.icon-only:hover {
+        color: $white;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .disable-dark-theme,
+  .disable-dark-theme a.icon-only:hover {
+    display: block;
+    color: $secondary !important;
+  }
+}
+
+body.dark-theme-disabled #topbar .disable-dark-theme {
+  display: block;
+}

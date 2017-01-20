@@ -1,0 +1,21 @@
+.datasets {
+  li {
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.datasets-figure {
+  width: 10rem;
+  height: 10rem;
+  margin-right: 2rem;
+  background: $gray-lightest;
+  border-radius: 0.25rem;
+}
+
+body.dark-theme .datasets-figure {
+  background: transparentize($white, 0.95);
+}

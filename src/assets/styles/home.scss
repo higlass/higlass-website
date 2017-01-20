@@ -1,0 +1,24 @@
+.intro {
+  font-size: 1.125em;
+  text-align: left;
+}
+
+.four-third {
+  position: relative;
+  border: 1px solid $gray-lightest;
+  border-radius: 0.25rem;
+
+  @include ratio(0.66);
+
+  .fwh {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+body.dark-theme .four-third {
+  border: 1px solid transparentize($white, 0.95);
+}

@@ -1,0 +1,42 @@
+{
+  "assets": {
+    "docs": "assets/docs",
+    "images": "assets/images",
+    "scripts": "assets/scripts",
+    "scriptsThirdParty": "assets/scripts-third-party",
+    "styles": "assets/styles",
+    "videos": "assets/videos"
+  },
+  "browsers": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR",
+    "Opera 12.1",
+    "Explorer >= 8",
+    "Firefox >= 3.6"
+  ],
+  "buildPaths": {
+    "development": "dev",
+    "production": "dist"
+  },
+  "dist": "dist",
+  "eslintDevRules": {
+    "no-console": 1
+  },
+  "eslintIgnore": "third-party",
+  "jsBundles": {
+    "base": {
+      "banner": "Global scripts",
+      "name": "base"
+    }
+  },
+  "jsGlobals": {},
+  "server": {
+    "host": "localhost",
+    "port": "3001"
+  },
+  "src": "src",
+  "styles": [
+    "index.scss"
+  ]
+}

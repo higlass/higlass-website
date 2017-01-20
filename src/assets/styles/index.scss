@@ -1,0 +1,27 @@
+@import '../../../node_modules/purecss-sass/vendor/assets/stylesheets/_purecss.scss';
+
+// Components
+@import 'colors';
+@import 'flexbox';
+@import 'margin-padding';
+@import 'transitions';
+
+// Mixins
+@import 'mixins/ratio';
+@import 'mixins/underline';
+
+// Base styling
+@import 'base';
+
+// Layout
+@import 'header';
+@import 'main';
+@import 'footer';
+
+// Page specific styles
+@import 'home';
+@import 'about';
+@import 'visualization';
+@import 'examples';
+@import 'datasets';
+@import 'docs';

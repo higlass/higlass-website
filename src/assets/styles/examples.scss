@@ -1,0 +1,16 @@
+.examples li {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.examples-figure {
+  @include ratio(1);
+
+  margin-right: 2rem;
+  background: $gray-lightest;
+  border-radius: 0.25rem;
+}
+
+body.dark-theme .examples-figure {
+  background: transparentize($white, 0.95);
+}

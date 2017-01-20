@@ -1,0 +1,21 @@
+#about-teaser {
+  background-image: url('../images/about-teaser.jpg');
+}
+
+body.dark-theme #about-teaser {
+  background-image: url('../images/about-teaser-dark.jpg');
+}
+
+.person {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+li:first-child .person {
+  margin-top: 0;
+}
+
+.person + p {
+  margin-top: 0;
+}
