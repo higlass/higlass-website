@@ -81,13 +81,19 @@
   nav li {
     line-height: inherit;
 
-    &.separated-left {
-      &::before {
-        content: '';
-        width: 1px;
-        margin: 0.25rem 0.5rem;
-        background: $gray-lightest;
-      }
+    &.separated-left::before,
+    &.disable-dark-theme::before {
+      content: '';
+      width: 1px;
+    }
+
+    &.separated-left::before {
+      margin: 0.25rem 0.5rem;
+      background: $gray-lightest;
+    }
+
+    &.disable-dark-theme::before {
+      margin: 0 0.125rem;
     }
 
     a {
@@ -122,8 +128,8 @@
     }
 
     .icon {
-      width: 0.9em;
-      height: 0.9em;
+      width: 1em;
+      height: 1em;
     }
   }
 
@@ -136,14 +142,14 @@ body.dark-theme #topbar {
   background: rgba(34, 34, 34, 0.75);
   box-shadow: 0 2px 0 0 transparentize($white, 0.95);
 
-  .branding a:active,
+  .branding:active,
   nav li a:active {
     color: $white;
     background: transparentize($white, 0.9);
     box-shadow: 0 2px 0 0 $white;
   }
 
-  .branding a:focus,
+  .branding:focus,
   nav li a:focus {
     color: $white;
     background: transparentize($white, 0.9);
@@ -157,23 +163,36 @@ body.dark-theme #topbar {
   .branding {
     color: $white;
 
-    a {
-      @include underline($white, -2px, 2px);
+    @include underline($white, -2px, 2px);
 
-      &:hover {
-        color: $white;
-      }
+    &:hover {
+      color: $white;
+    }
 
-      &.is-active {
-        box-shadow: 0 2px 0 0 $secondary;
-      }
+    &.is-active {
+      box-shadow: 0 2px 0 0 $secondary;
+    }
 
-      &:hover .higlass-hi,
-      &:active .higlass-hi,
-      &:focus .higlass-hi,
-      &.is-active .higlass-hi {
-        color: $secondary;
-      }
+    &:hover .higlass-hi,
+    &:active .higlass-hi,
+    &:focus .higlass-hi,
+    &.is-active .higlass-hi {
+      color: $secondary;
+    }
+  }
+
+  .btn {
+    color: $gray-darkest;
+    background: $gray-light;
+
+    &:hover,
+    &:focus {
+      background: $white;
+    }
+
+    &.is-active,
+    &:active {
+      background: $secondary;
     }
   }
 
@@ -199,7 +218,6 @@ body.dark-theme #topbar {
         }
       }
 
-      &:hover,
       &.icon-only:hover {
         color: $white;
 
@@ -212,11 +230,11 @@ body.dark-theme #topbar {
 
   .disable-dark-theme,
   .disable-dark-theme a.icon-only:hover {
-    display: block;
+    display: flex;
     color: $secondary !important;
   }
 }
 
 body.dark-theme-disabled #topbar .disable-dark-theme {
-  display: block;
+  display: flex;
 }
