@@ -251,6 +251,17 @@ gulp.task('js', () => gulp
 );
 
 
+// Copy over specific npm scripts
+gulp.task('js-npm-scripts', () => gulp
+  .src(config.thirdPartyScripts)
+  .pipe(plumber())
+  .pipe(flatten())
+  .pipe(newer(`${config.dist}/${config.assets.scriptsThirdParty}`))
+  .pipe(gulp.dest(`${config.dist}/${config.assets.scriptsThirdParty}`))
+  .pipe(bs.reload({ stream: true }))
+);
+
+
 // Third party JS scripts
 gulp.task('js-third-party', () => gulp
   .src(`${config.src}/${config.assets.scriptsThirdParty}/**/*.js`)
@@ -380,7 +391,14 @@ gulp.task('build', (callback) => {
     'clean',
     'lint',
     [
-      'js', 'js-third-party', 'sass', 'images', 'docs', 'videos', 'html'
+      'js',
+      'js-third-party',
+      'js-npm-scripts',
+      'sass',
+      'images',
+      'docs',
+      'videos',
+      'html'
     ],
     callback
   );
