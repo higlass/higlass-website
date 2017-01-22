@@ -10,15 +10,15 @@
     <title>HiGlass - Visualization</title>
 
     <!-- http://www.jonathantneal.com/blog/understand-the-favicon/ -->
-    <link rel="apple-touch-icon" href="assets/images/touchicon.png">
-    <link rel="icon" href="assets/images/favicon.png"">
-    <!--[if IE]><link rel="shortcut icon" href="assets/images/favicon.ico"><![endif]-->
+    <link rel="apple-touch-icon" href="../assets/images/touchicon.png">
+    <link rel="icon" href="../assets/images/favicon.png"">
+    <!--[if IE]><link rel="shortcut icon" href="../assets/images/favicon.ico"><![endif]-->
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="assets/images/tileicon.png">
+    <meta name="msapplication-TileImage" content="../assets/images/tileicon.png">
 
     <link href="//fonts.googleapis.com/css?family=Overpass:300,800" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/styles/index.css" type="text/css">
+    <link rel="stylesheet" href="../assets/styles/index.css" type="text/css">
 
     <script>
       // Minified version of isMobile included in the HTML since it's small
@@ -51,19 +51,19 @@
   <header id="topbar">
     <div class="wrap flex-c flex-jc-sb">
       <div class="flex-c branding-launch">
-        <a href="." class="branding">
+        <a href=".." class="branding">
           <span class="higlass"><span class="higlass-hi">Hi</span>Glass</span>
         </a>
-        <a href="visualization.html" class="btn is-uppercased is-active">
+        <a href="../visualization" class="btn is-uppercased">
           Launch
         </a>
       </div>
       <nav class="flex-c flex-jc-e flex-a-s is-toggable">
         <ul class="flex-c flex-jc-e flex-a-s no-list-style">
-          <li><a href="about.html">About</a></li>
-          <li><a href="examples.html">Examples</a></li>
-          <li><a href="data-sets.html">Datasets</a></li>
-          <li><a href="docs.html">Docs</a></li>
+          <li><a href="../about">About</a></li>
+          <li><a href="." class="is-active">Examples</a></li>
+          <li><a href="../data-sets">Datasets</a></li>
+          <li><a href="../docs">Docs</a></li>
           <li class="separated-left flex-c flex-jc-c">
             <a
               href="https://github.com/hms-dbmi?&q=higlass"
@@ -72,7 +72,7 @@
               <svg class="icon">
                 <use
                   xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xlink:href="assets/images/icons.svg#github"></use>
+                  xlink:href="../assets/images/icons.svg#github"></use>
               </svg>
             </a>
           </li>
@@ -83,7 +83,7 @@
               <svg class="icon">
                 <use
                   xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xlink:href="assets/images/icons.svg#moon"></use>
+                  xlink:href="../assets/images/icons.svg#moon"></use>
               </svg>
             </a>
           </li>
@@ -96,14 +96,39 @@
   </header>
 
   <main class="flex-i-g-1">
-    <div class="border-bottom m-t-1 p-t-1 m-b-1 p-b-2">
-      <div class="flex-c flex-jc-c flex-a-c">
-        <span>HiGlass visualization goes here</span>
+    <div class="border-bottom p-t-1 p-b-1">
+      <div class="wrap smaller">
+        <p>One or two sentences saying what the user can find here</p>
       </div>
     </div>
 
     <div class="wrap p-t-1 p-b-2">
-      <p class="abstract">I'd imagine that the this view is generated dynamically by pulling the related config JSON file from a predefined location. The desciption below could be integrated in the same config file or pulled in parallel from another endpoint.</p>
+      <ul class="examples flex-c flex-w-w three-column-list no-list-style">
+        <li>
+          <figure class="examples-figure"></figure>
+          <p>Small description</p>
+        </li>
+        <li>
+          <figure class="examples-figure"></figure>
+          <p>Small description</p>
+        </li>
+        <li>
+          <figure class="examples-figure"></figure>
+          <p>Small description</p>
+        </li>
+        <li>
+          <figure class="examples-figure"></figure>
+          <p>Small description</p>
+        </li>
+        <li>
+          <figure class="examples-figure"></figure>
+          <p>Small description</p>
+        </li>
+        <li>
+          <figure class="examples-figure"></figure>
+          <p>Small description</p>
+        </li>
+      </ul>
     </div>
   </main>
 
@@ -115,22 +140,23 @@
         <svg class="logo-hms">
           <use
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="assets/images/icons.svg#harvard-hms"></use>
+            xlink:href="../assets/images/icons.svg#harvard-hms"></use>
         </svg>
         <svg class="logo-dbmi">
           <use
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="assets/images/icons.svg#harvard-hms-dbmi"></use>
+            xlink:href="../assets/images/icons.svg#harvard-hms-dbmi"></use>
         </svg>
       </div>
 
       <nav>
         <ul class="flex-c flex-jc-c flex-a-s no-list-style">
-          <li><a href="about.html">About</a></li>
-          <li><a href="visualization.html" class="is-active">Visualization</a></li>
-          <li><a href="examples.html">Examples</a></li>
-          <li><a href="data-sets.html">Datasets</a></li>
-          <li><a href="docs.html">Docs</a></li>
+          <li><a href="..">Home</a></li>
+          <li><a href="../about">About</a></li>
+          <li><a href="../visualization">Visualization</a></li>
+          <li><a href="." class="is-active">Examples</a></li>
+          <li><a href="../data-sets">Datasets</a></li>
+          <li><a href="../docs">Docs</a></li>
         </ul>
       </nav>
 
@@ -138,7 +164,7 @@
     </div>
   </footer>
 
-  <script src="assets/scripts-third-party/ga.js"></script>
-  <script src="assets/scripts/base.js"></script>
+  <script src="../assets/scripts-third-party/ga.js"></script>
+  <script src="../assets/scripts/base.js"></script>
 </body>
 </html>
