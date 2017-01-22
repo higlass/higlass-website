@@ -10,13 +10,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Overpass', 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 16px;
   line-height: 1;
 }
 
 body {
   background: $white;
   color: $gray-dark;
-  font-size: 16px;
   font-fammily: sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -113,6 +113,7 @@ body.dark-theme a {
 a:hover {
   color: $black;
   box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 1);
+  text-decoration: none;
 }
 
 body.dark-theme a:hover {
@@ -126,6 +127,7 @@ a:focus {
   box-shadow: inset 0 0 0 1px transparentize($primary, 0.95);
   outline: none;
   border-radius: 0.125rem;
+  text-decoration: none;
 }
 
 body.dark-theme a:focus {
@@ -535,6 +537,32 @@ ul.iconized {
 
 .reference .secondary-information {
   font-size: 0.85em;
+}
+
+.full-w,
+.full-wh {
+  width: 100%;
+}
+
+.full-h,
+.full-wh {
+  height: 100%;
+}
+
+.full-dim {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.rel {
+  position: relative;
+}
+
+a .icon {
+  cursor: pointer;
 }
 
 
