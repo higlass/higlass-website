@@ -3,9 +3,9 @@
   z-index: 2;
   background: transparentize($white, 0.1);
   box-shadow: 0 2px 0 0 transparentize($black, 0.95);
-  line-height: 2em;
+  line-height: 2.5em;
 
-  .branding a:active,
+  .branding:active,
   nav li a:active {
     color: $primary;
     background: transparentize($primary, 0.8);
@@ -16,7 +16,7 @@
     }
   }
 
-  .branding a:focus,
+  .branding:focus,
   nav li a:focus {
     color: $black;
     background: transparentize($black, 0.9);
@@ -33,46 +33,76 @@
   }
 
   .branding {
+    position: relative;
+    display: block;
     font-weight: bold;
     color: $black;
+    box-shadow: none;
 
-    a {
-      position: relative;
-      display: block;
-      box-shadow: none;
+    @include underline($black, -2px, 2px);
 
-      @include underline($black, -2px, 2px);
+    &.is-active {
+      box-shadow: 0 2px 0 0 $primary;
+    }
 
-      &.is-active {
-        box-shadow: 0 2px 0 0 $primary;
-      }
+    &:hover .higlass-hi,
+    &:active .higlass-hi,
+    &:focus .higlass-hi,
+    &.is-active .higlass-hi {
+      color: $primary;
+    }
+  }
 
-      &:hover .higlass-hi,
-      &:active .higlass-hi,
-      &:focus .higlass-hi,
-      &.is-active .higlass-hi {
-        color: $primary;
-      }
+  .btn {
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    padding: 0 0.375rem;
+    color: $gray-darker;
+    font-size: 0.625em;
+    line-height: 2.5em;
+    border: 0;
+    border-radius: 0.25rem;
+    box-shadow: none;
+    background: $gray-lighter;
+    transition: all $fast-transition $easing;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background: $black;
+    }
+
+    &.is-active,
+    &:active {
+      color: $white;
+      background: $primary;
     }
   }
 
   nav li {
     line-height: inherit;
 
-    &.separated-left {
-      &::before {
-        content: '';
-        width: 1px;
-        margin: 0.25rem 0.5rem;
-        background: $gray-lightest;
-      }
+    &.separated-left::before,
+    &.disable-dark-theme::before,
+    &.menu-toggler::before {
+      content: '';
+      width: 1px;
+    }
+
+    &.separated-left::before {
+      margin: 0.25rem 0.25rem;
+      background: $gray-lightest;
+    }
+
+    &.disable-dark-theme::before,
+    &.menu-toggler::before {
+      margin: 0 0.125rem;
     }
 
     a {
       position: relative;
       display: block;
-      margin: 0 0.175rem;
-      padding: 0 0.125rem;
+      margin: 0 0.125rem;
+      padding: 0;
       box-shadow: none;
       font-size: 0.85em;
 
@@ -92,17 +122,43 @@
         font-weight: bold;
         color: $primary;
         box-shadow: 0 2px 0 0 $primary;
+
+        &::before {
+          display: none;
+        }
       }
     }
 
     .icon {
-      width: 0.9em;
-      height: 0.9em;
+      width: 1em;
+      height: 1em;
     }
   }
 
   .disable-dark-theme {
     display: none;
+  }
+
+  .menu-toggler.c-hamburger {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    background: none;
+
+    span,
+    span::before,
+    span::after {
+      background: $gray-dark;
+    }
+
+    &.c-hamburger--htx.is-active span {
+      background: none;
+    }
+
+    &.c-hamburger--htx.is-active span::before,
+    &.c-hamburger--htx.is-active span::after {
+      background: $primary;
+    }
   }
 }
 
@@ -110,14 +166,14 @@ body.dark-theme #topbar {
   background: rgba(34, 34, 34, 0.75);
   box-shadow: 0 2px 0 0 transparentize($white, 0.95);
 
-  .branding a:active,
+  .branding:active,
   nav li a:active {
     color: $white;
     background: transparentize($white, 0.9);
     box-shadow: 0 2px 0 0 $white;
   }
 
-  .branding a:focus,
+  .branding:focus,
   nav li a:focus {
     color: $white;
     background: transparentize($white, 0.9);
@@ -131,23 +187,36 @@ body.dark-theme #topbar {
   .branding {
     color: $white;
 
-    a {
-      @include underline($white, -2px, 2px);
+    @include underline($white, -2px, 2px);
 
-      &:hover {
-        color: $white;
-      }
+    &:hover {
+      color: $white;
+    }
 
-      &.is-active {
-        box-shadow: 0 2px 0 0 $secondary;
-      }
+    &.is-active {
+      box-shadow: 0 2px 0 0 $secondary;
+    }
 
-      &:hover .higlass-hi,
-      &:active .higlass-hi,
-      &:focus .higlass-hi,
-      &.is-active .higlass-hi {
-        color: $secondary;
-      }
+    &:hover .higlass-hi,
+    &:active .higlass-hi,
+    &:focus .higlass-hi,
+    &.is-active .higlass-hi {
+      color: $secondary;
+    }
+  }
+
+  .btn {
+    color: $gray-darkest;
+    background: $gray-light;
+
+    &:hover,
+    &:focus {
+      background: $white;
+    }
+
+    &.is-active,
+    &:active {
+      background: $secondary;
     }
   }
 
@@ -173,7 +242,6 @@ body.dark-theme #topbar {
         }
       }
 
-      &:hover,
       &.icon-only:hover {
         color: $white;
 
@@ -186,11 +254,164 @@ body.dark-theme #topbar {
 
   .disable-dark-theme,
   .disable-dark-theme a.icon-only:hover {
-    display: block;
+    display: flex;
     color: $secondary !important;
+  }
+
+  .menu-toggler.c-hamburger {
+    span,
+    span::before,
+    span::after {
+      background: $gray-medium;
+    }
+
+    &.c-hamburger--htx.is-active span::before,
+    &.c-hamburger--htx.is-active span::after {
+      background: $secondary;
+    }
   }
 }
 
 body.dark-theme-disabled #topbar .disable-dark-theme {
-  display: block;
+  display: flex;
+}
+
+
+/*
+ * -----------------------------------------------------------------------------
+ * Media Queries
+ * -----------------------------------------------------------------------------
+ */
+
+/* 400px */
+@media screen and (max-width: 30em) {
+  #topbar {
+    .branding-launch {
+      position: relative;
+      z-index: 1;
+    }
+
+    nav {
+      display: block;
+      position: absolute;
+      top: 2.5rem;
+      right: 0;
+      left: 0;
+
+      .menu-toggler.c-hamburger {
+        top: -2.5rem;
+      }
+
+      ul {
+        height: 0;
+        opacity: 0;
+        background: rgba(234, 234, 234, 0.9);
+        transform: scale(1, 0);
+        transition: opacity $fast-transition $easing, transform $fast-transition $easing;
+        transform-origin: top center;
+
+        &.flex-c {
+          display: block;
+        }
+      }
+
+      li {
+        text-align: center;
+
+        a {
+          margin: 0 1rem;
+          font-size: 1em;
+        }
+
+        &.separated-left {
+          &::before {
+            display: none;
+          }
+
+          a.icon-only {
+            display: block;
+            width: 100%;
+            margin: 0 1rem;
+          }
+        }
+      }
+    }
+
+    nav.is-active {
+      ul {
+        height: auto;
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+    }
+  }
+
+  body.dark-theme #topbar {
+    nav ul {
+      background: rgba(44, 44, 44, 0.9);
+    }
+  }
+
+  #topbar nav li.disable-dark-theme,
+  body.dark-theme #topbar nav li.disable-dark-theme,
+  body.dark-theme-disabled #topbar nav li.disable-dark-theme {
+    &::before {
+      display: none;
+    }
+
+    a.icon-only,
+    a.icon-only:hover {
+      display: block;
+      width: 100%;
+      margin: 0 1rem;
+    }
+  }
+}
+/* 480px */
+@media screen and (min-width: 30em) {
+  #topbar {
+    .menu-toggler {
+      display: none;
+    }
+  }
+}
+
+/* 568px (Pure.css Grid: SM) */
+@media screen and (min-width: 35.5em) {
+  #topbar {
+    .btn {
+      margin-left: 1rem;
+    }
+
+    nav li a {
+      margin: 0 0.175rem;
+      padding: 0 0.125rem;
+
+      &.separated-left::before {
+        margin: 0.25rem 0.5rem;
+      }
+    }
+  }
+}
+
+/* 640px */
+@media screen and (min-width: 40em) {
+  #topbar {
+    .menu-toggler.flex-c {
+      display: none !important;
+      background: red;
+
+      button {
+        background: red;
+      }
+    }
+  }
+}
+
+/* 960px */
+@media screen and (min-width: 60em) {
+  #topbar,
+  #topbar .btn {
+    line-height: 2em;
+  }
 }

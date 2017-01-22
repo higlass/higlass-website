@@ -10,15 +10,15 @@
     <title>HiGlass - About</title>
 
     <!-- http://www.jonathantneal.com/blog/understand-the-favicon/ -->
-    <link rel="apple-touch-icon" href="assets/images/touchicon.png">
-    <link rel="icon" href="assets/images/favicon.png"">
-    <!--[if IE]><link rel="shortcut icon" href="assets/images/favicon.ico"><![endif]-->
+    <link rel="apple-touch-icon" href="../assets/images/touchicon.png">
+    <link rel="icon" href="../assets/images/favicon.png"">
+    <!--[if IE]><link rel="shortcut icon" href="../assets/images/favicon.ico"><![endif]-->
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="assets/images/tileicon.png">
+    <meta name="msapplication-TileImage" content="../assets/images/tileicon.png">
 
     <link href="//fonts.googleapis.com/css?family=Overpass:300,800" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/styles/index.css" type="text/css">
+    <link rel="stylesheet" href="../assets/styles/index.css" type="text/css">
 
     <script>
       // Minified version of isMobile included in the HTML since it's small
@@ -26,7 +26,7 @@
 
       window.nightModus = parseInt(
         new Date().toLocaleTimeString().split(':')[0], 10
-      ) >= 20;
+      ) > 19;
     </script>
 </head>
 
@@ -50,39 +50,47 @@
 
   <header id="topbar">
     <div class="wrap flex-c flex-jc-sb">
-      <div class="branding">
-        <a href=".">
+      <div class="flex-c branding-launch">
+        <a href=".." class="branding">
           <span class="higlass"><span class="higlass-hi">Hi</span>Glass</span>
         </a>
+        <a href="../visualization" class="btn is-uppercased">
+          Launch
+        </a>
       </div>
-      <nav>
+      <nav class="flex-c flex-jc-e flex-a-s is-toggable">
         <ul class="flex-c flex-jc-e flex-a-s no-list-style">
-          <li><a href="about.html">About</a></li>
-          <li><a href="visualization.html">Visualization</a></li>
-          <li><a href="examples.html">Examples</a></li>
-          <li><a href="data-sets.html">Datasets</a></li>
-          <li><a href="docs.html" class="is-active">Docs</a></li>
+          <li><a href="../about">About</a></li>
+          <li><a href="../examples">Examples</a></li>
+          <li><a href="../data-sets">Datasets</a></li>
+          <li><a href="." class="is-active">Docs</a></li>
           <li class="separated-left flex-c flex-jc-c">
-            <a href="https://github.com/hms-dbmi?&q=higlass" target="_blank" class="icon-only">
+            <a
+              href="https://github.com/hms-dbmi?&q=higlass"
+              target="_blank"
+              class="icon-only flex-c flex-a-c">
               <svg class="icon">
                 <use
                   xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xlink:href="assets/images/icons.svg#github"></use>
+                  xlink:href="../assets/images/icons.svg#github"></use>
               </svg>
             </a>
           </li>
-          <li class="flex-c flex-jc-c disable-dark-theme">
+          <li class="disable-dark-theme flex-c flex-jc-c">
             <a
-              class="icon-only button-like"
+              class="icon-only button-like flex-c flex-a-c"
               onclick="window.base.disableDarkTheme()">
               <svg class="icon">
                 <use
                   xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xlink:href="assets/images/icons.svg#moon"></use>
+                  xlink:href="../assets/images/icons.svg#moon"></use>
               </svg>
             </a>
           </li>
         </ul>
+        <button
+          class="menu-toggler c-hamburger c-hamburger--htx"><span></span>
+        </button>
       </nav>
     </div>
   </header>
@@ -111,7 +119,7 @@
           <svg class="icon">
             <use
               xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="assets/images/icons.svg#link"></use>
+              xlink:href="../assets/images/icons.svg#link"></use>
           </svg>
         </a>
         <span>1. Example</span>
@@ -123,7 +131,7 @@
           <svg class="icon">
             <use
               xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="assets/images/icons.svg#link"></use>
+              xlink:href="../assets/images/icons.svg#link"></use>
           </svg>
         </a>
         <span>2. Example</span>
@@ -135,7 +143,7 @@
           <svg class="icon">
             <use
               xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="assets/images/icons.svg#link"></use>
+              xlink:href="../assets/images/icons.svg#link"></use>
           </svg>
         </a>
         <span>3. Example</span>
@@ -147,7 +155,7 @@
           <svg class="icon">
             <use
               xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="assets/images/icons.svg#link"></use>
+              xlink:href="../assets/images/icons.svg#link"></use>
           </svg>
         </a>
         <span>4. Example</span>
@@ -159,7 +167,7 @@
           <svg class="icon">
             <use
               xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="assets/images/icons.svg#link"></use>
+              xlink:href="../assets/images/icons.svg#link"></use>
           </svg>
         </a>
         <span>5. Example</span>
@@ -171,7 +179,7 @@
           <svg class="icon">
             <use
               xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="assets/images/icons.svg#link"></use>
+              xlink:href="../assets/images/icons.svg#link"></use>
           </svg>
         </a>
         <span>6. Example</span>
@@ -183,7 +191,7 @@
           <svg class="icon">
             <use
               xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="assets/images/icons.svg#link"></use>
+              xlink:href="../assets/images/icons.svg#link"></use>
           </svg>
         </a>
         <span>7. Example</span>
@@ -195,7 +203,7 @@
           <svg class="icon">
             <use
               xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="assets/images/icons.svg#link"></use>
+              xlink:href="../assets/images/icons.svg#link"></use>
           </svg>
         </a>
         <span>8. Example</span>
@@ -207,7 +215,7 @@
           <svg class="icon">
             <use
               xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="assets/images/icons.svg#link"></use>
+              xlink:href="../assets/images/icons.svg#link"></use>
           </svg>
         </a>
         <span>9. Example</span>
@@ -219,7 +227,7 @@
           <svg class="icon">
             <use
               xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="assets/images/icons.svg#link"></use>
+              xlink:href="../assets/images/icons.svg#link"></use>
           </svg>
         </a>
         <span>10. Example</span>
@@ -236,22 +244,23 @@
         <svg class="logo-hms">
           <use
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="assets/images/icons.svg#harvard-hms"></use>
+            xlink:href="../assets/images/icons.svg#harvard-hms"></use>
         </svg>
         <svg class="logo-dbmi">
           <use
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="assets/images/icons.svg#harvard-hms-dbmi"></use>
+            xlink:href="../assets/images/icons.svg#harvard-hms-dbmi"></use>
         </svg>
       </div>
 
       <nav>
         <ul class="flex-c flex-jc-c flex-a-s no-list-style">
-          <li><a href="about.html">About</a></li>
-          <li><a href="visualization.html">Visualization</a></li>
-          <li><a href="examples.html">Examples</a></li>
-          <li><a href="data-sets.html">Datasets</a></li>
-          <li><a href="docs.html" class="is-active">Docs</a></li>
+          <li><a href="..">Home</a></li>
+          <li><a href="../about">About</a></li>
+          <li><a href="../visualization">Visualization</a></li>
+          <li><a href="../examples">Examples</a></li>
+          <li><a href="../data-sets">Datasets</a></li>
+          <li><a href="." class="is-active">Docs</a></li>
         </ul>
       </nav>
 
@@ -259,7 +268,7 @@
     </div>
   </footer>
 
-  <script src="assets/scripts/ga.js"></script>
-  <script src="assets/scripts/base.js"></script>
+  <script src="../assets/scripts-third-party/ga.js"></script>
+  <script src="../assets/scripts/base.js"></script>
 </body>
 </html>

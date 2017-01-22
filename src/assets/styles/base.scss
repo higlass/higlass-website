@@ -6,18 +6,17 @@
 
 html,
 body {
-  width: 100vw;
   min-height: 100vh;
   margin: 0;
   padding: 0;
   font-family: 'Overpass', 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 16px;
   line-height: 1;
 }
 
 body {
   background: $white;
   color: $gray-dark;
-  font-size: 16px;
   font-fammily: sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -114,6 +113,7 @@ body.dark-theme a {
 a:hover {
   color: $black;
   box-shadow: inset 0 -2px 0 0 rgba(0, 0, 0, 1);
+  text-decoration: none;
 }
 
 body.dark-theme a:hover {
@@ -127,6 +127,7 @@ a:focus {
   box-shadow: inset 0 0 0 1px transparentize($primary, 0.95);
   outline: none;
   border-radius: 0.125rem;
+  text-decoration: none;
 }
 
 body.dark-theme a:focus {
@@ -203,118 +204,6 @@ body.mobile video.bg-video {
 .date.smaller,
 ul.smaller {
   font-size: 0.85em;
-}
-
-.pointer-wrapper {
-  position: absolute;
-  z-index: 2;
-  top: -3.25rem;
-  left: 50%;
-  overflow: visible;
-  transform: translateX(-50%) scale(1);
-  animation-name: delayedScaleUp;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-out;
-  animation-duration: 5s;
-}
-
-@-moz-keyframes delayedScaleUp {
-  0% {
-    -moz-transform: translateX(-50%) scale(0);
-  }
-  95% {
-    -moz-transform: translateX(-50%) scale(0);
-  }
-  100% {
-    -moz-transform: translateX(-50%) scale(1);
-  }
-}
-@-webkit-keyframes delayedScaleUp {
-  0% {
-    -webkit-transform: translateX(-50%) scale(0);
-  }
-  95% {
-    -webkit-transform: translateX(-50%) scale(0);
-  }
-  100% {
-    -webkit-transform: translateX(-50%) scale(1);
-  }
-}
-@keyframes delayedScaleUp {
-  0% {
-    transform: translateX(-50%) scale(0);
-  }
-  95% {
-    transform: translateX(-50%) scale(0);
-  }
-  100% {
-    transform: translateX(-50%) scale(1);
-  }
-}
-
-.pointer {
-  bottom: 0.75rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  transform: translateY(0);
-  color: $white;
-  white-space: nowrap;
-  background: transparentize($black, 0.1);
-
-  animation-name: slowDownTopMove;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-out;
-  animation-duration: 2s;
-
-  &:after {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    content: '';
-    border: solid transparent;
-    pointer-events: none;
-
-    border-color: transparent;
-    border-top-color: transparentize($black, 0.1);
-    border-width: 0.5rem;
-    margin-left: -0.5rem;
-  }
-}
-
-@-moz-keyframes slowDownTopMove {
-  0% {
-    -moz-transform: translateY(0);
-  }
-  25% {
-    -moz-transform: translateY(0.5rem);
-  }
-  100% {
-    -moz-transform: translateY(0);
-  }
-}
-@-webkit-keyframes slowDownTopMove {
-  0% {
-    -webkit-transform: translateY(0);
-  }
-  25% {
-    -webkit-transform: translateY(0.5rem);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-  }
-}
-@keyframes slowDownTopMove {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(0.5rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 h1.highlight,
@@ -650,21 +539,33 @@ ul.iconized {
   font-size: 0.85em;
 }
 
-/*
- * -----------------------------------------------------------------------------
- * Specific styles, i.e. IDs
- * -----------------------------------------------------------------------------
- */
+.full-w,
+.full-wh {
+  width: 100%;
+}
 
-#authors-list h4 + p {
-  margin-top: -0.25rem;
+.full-h,
+.full-wh {
+  height: 100%;
+}
+
+.full-dim {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.rel {
+  position: relative;
+}
+
+a .icon {
+  cursor: pointer;
 }
 
 
-
-#youtube {
-  @include ratio(0.553571429);  // 310 / 560
-}
 
 /*
  * -----------------------------------------------------------------------------
@@ -674,52 +575,16 @@ ul.iconized {
 
 /* 400px */
 @media screen and (min-width: 25em) {
-  h1 {
-    font-size: 4rem;
-    line-height: 1.5;
 
-    .logo {
-      width: 3rem;
-      height: 6rem;
-    }
-  }
-
-  h1 + h2 {
-    font-size: 2rem;
-  }
 }
 
 /* 568px (Pure.css Grid: SM) */
 @media screen and (min-width: 35.5em) {
-  h1 {
-    font-size: 6rem;
 
-    .logo {
-      width: 6rem;
-      height: 9rem;
-    }
-  }
-
-  h1 + h2 {
-    font-size: 3rem;
-  }
 }
 
 /* 640px */
 @media screen and (min-width: 40em) {
-  h1 {
-    font-size: 7rem;
-
-    .logo {
-      width: 6rem;
-      height: 10.5rem;
-    }
-  }
-
-  h1 + h2 {
-    font-size: 3.5rem;
-  }
-
   .wrap {
     margin-left: 8.3334%;  /* 1/12 */
     margin-right: 8.3334%;
@@ -736,19 +601,6 @@ ul.iconized {
     font-size: 20px;
   }
 
-  h1 {
-    font-size: 9rem;
-
-    .logo {
-      width: 7rem;
-      height: 13.5rem;
-    }
-  }
-
-  h1 + h2 {
-    font-size: 4rem;
-  }
-
   .wrap {
     margin-left: 11.1112%;  /* 1/9 */
     margin-right: 11.1112%;
@@ -756,14 +608,6 @@ ul.iconized {
 
   .video {
     width: 80%;
-  }
-
-  .pointer {
-    font-size: 30px;
-  }
-
-  .pointer-wrapper {
-    top: -3.85rem;
   }
 }
 
@@ -781,14 +625,6 @@ ul.iconized {
   .video {
     width: 70%;
   }
-
-  .pointer {
-    font-size: 36px;
-  }
-
-  .pointer-wrapper {
-    top: -4.25rem;
-  }
 }
 
 /* 1600px */
@@ -804,13 +640,5 @@ ul.iconized {
   .wrap {
     margin-left: 20%;  /* 1/5 */
     margin-right: 20%;
-  }
-
-  .pointer {
-    font-size: 48px;
-  }
-
-  .pointer-wrapper {
-    top: -5rem;
   }
 }

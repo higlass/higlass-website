@@ -72,13 +72,12 @@ gulp.src = (...args) => gulpSrc
     this.emit('end');
   }));
 
-const getDirs = srcPath => fs.readdirSync(srcPath).filter(
-  file => fs.statSync(`${srcPath}/${file}`).isDirectory()
-);
+const getDirs = srcPath => fs.readdirSync(srcPath)
+  .filter(file => fs.statSync(`${srcPath}/${file}`).isDirectory());
 
-const getModules = srcPath => getDirs(srcPath).map(
-  module => `${srcPath}/${module}/index.js`
-);
+const getModules = (srcPath, _config) => getDirs(srcPath)
+  .filter(module => _config[module])
+  .map(module => `${srcPath}/${module}/index.js`);
 
 
 /*
@@ -177,7 +176,7 @@ gulp.task('init-live-reload', () => {
 // JavaScript
 gulp.task('js', () => gulp
   .src(
-    getModules(`${config.src}/${config.assets.scripts}`),
+    getModules(`${config.src}/${config.assets.scripts}`, config.jsBundles),
     { read: false }
   )
   .pipe(plumber())
@@ -187,7 +186,8 @@ gulp.task('js', () => gulp
       path.basename(path.dirname(file.path))
     ].banner} */`,
     format: 'umd',
-    globals: config.jsGlobals,
+    globals: config.rollupGlobals,
+    external: config.rollupExternals,
     moduleName: config.jsBundles[
       path.basename(path.dirname(file.path))
     ].name,
@@ -247,6 +247,17 @@ gulp.task('js', () => gulp
   // Optimize code for speed
   .pipe(optimize({ sourceMaps: true }))
   .pipe(gulp.dest(`${config.dist}/${config.assets.scripts}`))
+  .pipe(bs.reload({ stream: true }))
+);
+
+
+// Copy over specific npm scripts
+gulp.task('js-npm-scripts', () => gulp
+  .src(config.thirdPartyScripts)
+  .pipe(plumber())
+  .pipe(flatten())
+  .pipe(newer(`${config.dist}/${config.assets.scriptsThirdParty}`))
+  .pipe(gulp.dest(`${config.dist}/${config.assets.scriptsThirdParty}`))
   .pipe(bs.reload({ stream: true }))
 );
 
@@ -380,7 +391,14 @@ gulp.task('build', (callback) => {
     'clean',
     'lint',
     [
-      'js', 'js-third-party', 'sass', 'images', 'docs', 'videos', 'html'
+      'js',
+      'js-third-party',
+      'js-npm-scripts',
+      'sass',
+      'images',
+      'docs',
+      'videos',
+      'html'
     ],
     callback
   );
