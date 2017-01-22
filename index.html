@@ -26,7 +26,7 @@
 
       window.nightModus = parseInt(
         new Date().toLocaleTimeString().split(':')[0], 10
-      ) > 17;
+      ) > 19;
     </script>
 </head>
 
@@ -50,20 +50,25 @@
 
   <header id="topbar">
     <div class="wrap flex-c flex-jc-sb">
-      <div class="branding">
-        <a href="." class="is-active">
+      <div class="flex-c branding-launch">
+        <a href="." class="branding">
           <span class="higlass"><span class="higlass-hi">Hi</span>Glass</span>
         </a>
+        <a href="visualization" class="btn is-uppercased">
+          Launch
+        </a>
       </div>
-      <nav>
+      <nav class="flex-c flex-jc-e flex-a-s is-toggable">
         <ul class="flex-c flex-jc-e flex-a-s no-list-style">
-          <li><a href="about.html">About</a></li>
-          <li><a href="visualization.html">Visualization</a></li>
-          <li><a href="examples.html">Examples</a></li>
-          <li><a href="data-sets.html">Datasets</a></li>
-          <li><a href="docs.html">Docs</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="examples">Examples</a></li>
+          <li><a href="data-sets">Datasets</a></li>
+          <li><a href="docs">Docs</a></li>
           <li class="separated-left flex-c flex-jc-c">
-            <a href="https://github.com/hms-dbmi?&q=higlass" target="_blank" class="icon-only">
+            <a
+              href="https://github.com/hms-dbmi?&q=higlass"
+              target="_blank"
+              class="icon-only flex-c flex-a-c">
               <svg class="icon">
                 <use
                   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -71,9 +76,9 @@
               </svg>
             </a>
           </li>
-          <li class="flex-c flex-jc-c disable-dark-theme">
+          <li class="disable-dark-theme flex-c flex-jc-c">
             <a
-              class="icon-only button-like"
+              class="icon-only button-like flex-c flex-a-c"
               onclick="window.base.disableDarkTheme()">
               <svg class="icon">
                 <use
@@ -83,6 +88,9 @@
             </a>
           </li>
         </ul>
+        <button
+          class="menu-toggler c-hamburger c-hamburger--htx"><span></span>
+        </button>
       </nav>
     </div>
   </header>
@@ -144,11 +152,12 @@
 
       <nav>
         <ul class="flex-c flex-jc-c flex-a-s no-list-style">
-          <li><a href="about.html">About</a></li>
-          <li><a href="visualization.html">Visualization</a></li>
-          <li><a href="examples.html">Examples</a></li>
-          <li><a href="data-sets.html">Datasets</a></li>
-          <li><a href="docs.html">Docs</a></li>
+          <li><a href="." class="is-active">Home</a></li>
+          <li><a href="about">About</a></li>
+          <li><a href="visualization">Visualization</a></li>
+          <li><a href="examples">Examples</a></li>
+          <li><a href="data-sets">Datasets</a></li>
+          <li><a href="docs">Docs</a></li>
         </ul>
       </nav>
 
@@ -156,7 +165,7 @@
     </div>
   </footer>
 
-  <script src="assets/scripts/ga.js"></script>
+  <script src="assets/scripts-third-party/ga.js"></script>
   <script src="assets/scripts/base.js"></script>
 </body>
 </html>
