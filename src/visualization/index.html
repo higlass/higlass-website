@@ -32,7 +32,7 @@
     </script>
 </head>
 
-<body class="flex-c flex-d-c">
+<body class="rel">
   <script>
     if (window.isMobile && window.isMobile.any) {
       document.body.className += ' mobile';
@@ -57,7 +57,7 @@
           <span class="higlass"><span class="higlass-hi">Hi</span>Glass</span>
         </a>
         <a href="." class="btn is-uppercased is-active">
-          Launch
+          Launched
         </a>
       </div>
       <nav class="flex-c flex-jc-e flex-a-s is-toggable">
@@ -97,19 +97,22 @@
     </div>
   </header>
 
-  <main class="flex-i-g-1">
-    <div class="border-bottom m-t-1 p-t-1 m-b-1 p-b-2">
-      <div id="higlass" class="full-dim"></div>
-    </div>
-
-    <div class="wrap p-t-1 p-b-2">
-      <p class="abstract">I'd imagine that the this view is generated dynamically by pulling the related config JSON file from a predefined location. The desciption below could be integrated in the same config file or pulled in parallel from another endpoint.</p>
+  <main class="full-dim-cont rel">
+    <div class="full-wh border-bottom">
+      <div id="higlass" class="full-dim rel"></div>
     </div>
   </main>
 
+  <section class="rel">
+    <div class="indicator">Description Below</div>
+    <div class="wrap p-t-1 p-b-1">
+      <p class="abstract">The desciption below could be integrated in the same config file or pulled in parallel from another endpoint. If no description is supplied the section should disappear and the only thing below would be the footer.</p>
+    </div>
+  </section>
+
   <!-- Content ends -->
 
-  <footer id="footer" class="m-t-2 p-t-2 p-b-2">
+  <footer id="footer" class="p-t-2 p-b-2">
     <div class="wrap">
       <div class="flex-c flex-jc-c">
         <svg class="logo-hms">
