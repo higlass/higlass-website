@@ -405,7 +405,7 @@ gulp.task('wiki', () => gulp
   .src(`${config.wiki}/**/*.md`)
   .pipe(plumber())
   .pipe(marked(config.markedOptions))
-  .pipe(concat('pansen.html', { newLine: '\n' }))
+  .pipe(concat('index.html', { newLine: '\n' }))
   .pipe(modify({
     fileModifier: (file, contents) => {
       // This is bit weird setup but well only grad the content of the
@@ -421,7 +421,7 @@ gulp.task('wiki', () => gulp
 
 // Zip
 gulp.task('zip', () => gulp
-  .src(`${config.dist}/*`)
+  .src(`${config.dist}/**/*`)
   .pipe(plumber())
   .pipe(zip('dist.zip'))
   .pipe(gulp.dest('.'))
