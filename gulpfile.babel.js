@@ -25,6 +25,7 @@ import sass from 'gulp-sass';
 import semver from 'semver';
 import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
+import zip from 'gulp-zip';
 
 import rollup from './scripts/gulp-rollup';
 
@@ -368,6 +369,16 @@ gulp.task('dev-watch', () => {
   ).on('change', bs.reload);
 });
 
+
+// Zip
+gulp.task('zip', () => gulp
+  .src(`${config.dist}/*`)
+  .pipe(plumber())
+  .pipe(zip('dist.zip'))
+  .pipe(gulp.dest('.'))
+);
+
+
 /*
  * -----------------------------------------------------------------------------
  * Task compiltions
@@ -378,12 +389,7 @@ gulp.task('dev-watch', () => {
 // Watch Files For Changes with live reload sync on every screen connect to
 // localhost.
 gulp.task('dev-watch-sync', (callback) => {
-  runSequence(
-    [
-      'init-live-reload', 'dev-watch'
-    ],
-    callback
-  );
+  runSequence('init-live-reload', 'dev-watch', callback);
 });
 
 gulp.task('build', (callback) => {
@@ -404,13 +410,12 @@ gulp.task('build', (callback) => {
   );
 });
 
+gulp.task('compile', (callback) => {
+  runSequence('build', 'zip', callback);
+});
+
 gulp.task('serve', (callback) => {
-  runSequence(
-    [
-      'build', 'dev-watch-sync'
-    ],
-    callback
-  );
+  runSequence('build', 'dev-watch-sync', callback);
 });
 
 gulp.task('default', ['build']);
