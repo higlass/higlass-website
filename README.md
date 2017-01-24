@@ -11,7 +11,14 @@
 **Installation:**
 
 ```bash
+$ git clone --recursive https://github.com/hms-dbmi/higlass-website
 $ npm install
+```
+
+**Note**: If you forgot to add `--recursive` do the following to pull the submodules
+
+```
+$ git submodule init && git submodule update --recursive
 ```
 
 **Developmental server:**

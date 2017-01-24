@@ -12,6 +12,7 @@ import gulp from 'gulp';
 import gulpIf from 'gulp-if';
 import gulpUtil from 'gulp-util';
 import ignore from 'gulp-ignore';
+import marked from 'gulp-marked';
 import nano from 'gulp-cssnano';
 import newer from 'gulp-newer';
 import nodeResolve from 'rollup-plugin-node-resolve';
@@ -288,6 +289,16 @@ gulp.task('lint', () => gulp
   }))
   .pipe(eslint.format())
   .pipe(eslint.failOnError())
+);
+
+
+// Convert markdown
+gulp.task('md', () => gulp
+  .src(`${config.docs}/**/*.md`)
+  .pipe(plumber())
+  .pipe(marked(config.markedOptions))
+  .pipe(gulp.dest(`${config.dist}/${config.docs}`))
+  .pipe(bs.reload({ stream: true }))
 );
 
 
