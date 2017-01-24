@@ -557,6 +557,21 @@ ul.iconized {
   left: 0;
 }
 
+.full-dim-cont {
+  width: 100%;
+  height: 100vh;
+  margin-top: -2.75rem;
+  padding-top: 2.75rem;
+}
+
+.full-dim-win {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
 .rel {
   position: relative;
 }
@@ -565,6 +580,10 @@ a .icon {
   cursor: pointer;
 }
 
+#sub,
+#main {
+  background: $white;
+}
 
 
 /*
