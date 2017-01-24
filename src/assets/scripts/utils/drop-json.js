@@ -18,7 +18,6 @@ export default function dropJson(el, dropCallback) {
 
   document.addEventListener('dragleave', () => {
     $el.removeClass('is-dragging-over');
-    console.log('left');
   });
 
   document.addEventListener('drop', (event) => {
