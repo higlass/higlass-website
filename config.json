@@ -1,6 +1,5 @@
 {
   "assets": {
-    "docs": "assets/docs",
     "images": "assets/images",
     "scripts": "assets/scripts",
     "scriptsThirdParty": "assets/scripts-third-party",
@@ -20,7 +19,7 @@
     "production": "dist"
   },
   "dist": "dist",
-  "docs": "wiki",
+  "docs": "docs",
   "eslintDevRules": {
     "no-console": 1
   },
@@ -52,5 +51,6 @@
   ],
   "thirdPartyScripts": [
     "node_modules/higlass/dist/scripts/hglib.js"
-  ]
+  ],
+  "wiki": "wiki"
 }
