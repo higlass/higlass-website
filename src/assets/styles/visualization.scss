@@ -10,10 +10,37 @@
   top: -1.8rem;
   left: 50%;
   width: 16rem;
-  margin-left: -5rem;
+  margin-left: -8rem;
   font-size: 0.9em;
   line-height: 1.5em;
   text-align: center;
   border-radius: 0.25rem 0.25rem 0 0;
   background: $gray-lightest;
+}
+
+#dropNotify {
+  z-index: -1;
+  color: $gray-darkest;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: transparentize($gray-light, 0.1);
+}
+
+#topbar,
+#main,
+#sub,
+#footer {
+  transition: opacity $normal-transition $easing;
+}
+
+body.is-dragging-over {
+  cursor: grabbing !important;
+
+  #topbar,
+  #main,
+  #sub,
+  #footer {
+    opacity: 0.125;
+  }
 }
