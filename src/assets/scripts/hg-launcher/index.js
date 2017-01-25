@@ -6,7 +6,7 @@ import dropJson from '../utils/drop-json';
 const query = getQueryParams(document.location.search);
 
 const baseConfigId = query.config ?
-  query.config : 'G8DKPkbdT8i57a3t9TObPA';
+  query.config : 'Zck5NllkQNOhZtSWKJidNA';
 
 const launchHg = config => hglib.HgComponent(
   document.querySelector('#higlass'),
