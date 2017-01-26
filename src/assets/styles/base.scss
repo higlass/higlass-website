@@ -585,6 +585,13 @@ a .icon {
   background: $white;
 }
 
+body.dark-theme {
+  #sub,
+  #main {
+    background: $gray-darkest;
+  }
+}
+
 
 /*
  * -----------------------------------------------------------------------------
