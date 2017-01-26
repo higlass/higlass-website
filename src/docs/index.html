@@ -95,36 +95,38 @@
     </div>
   </header>
 
-  <main class="flex-i-g-1">
-    <div class="border-bottom m-t-1 p-t-1 m-b-1 p-b-2">
-      <div class="wrap smaller">
-        <h4 class="smaller is-uppercased index-headline">Index</h4>
-        <ol class="index flex-c flex-w-w two-column-list no-list-style">
-          <li><a href="#example-1">1. Example</a></li>
-          <li><a href="#example-2">2. Example</a></li>
-          <li><a href="#example-3">3. Example</a></li>
-          <li><a href="#example-4">4. Example</a></li>
-          <li><a href="#example-5">5. Example</a></li>
-          <li><a href="#example-6">6. Example</a></li>
-          <li><a href="#example-7">7. Example</a></li>
-          <li><a href="#example-8">8. Example</a></li>
-          <li><a href="#example-9">9. Example</a></li>
-          <li><a href="#example-10">10. Example</a></li>
-        </ol>
-      </div>
-    </div>
-    <div class="wrap p-t-1 p-b-2">
-      <h3 id="example-1" class="smaller underlined anchored">
-        <a href="#example-1" class="hidden-anchor">
-          <svg class="icon">
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="../assets/images/icons.svg#link"></use>
-          </svg>
-        </a>
-        <span>1. Example</span>
-      </h3>
-      <p>Example doc entry. We can explain some nice stuff here. Example doc entry. We can explain some nice stuff here.</p>
+  <main class="flex-i-g-1"> <div class="border-bottom m-t-1 p-t-1 m-b-1 p-b-2">
+      <div class="wrap smaller"> <h4 class="smaller is-uppercased
+              index-headline">Index</h4> <ol class="index flex-c flex-w-w
+              two-column-list no-list-style"> <li><a href="#example-1">1.
+              Opening a saved view config</a></li> <li><a href="#example-2">2. Example</a></li>
+      <li><a href="#example-3">3. Example</a></li> <li><a href="#example-4">4.
+              Example</a></li> <li><a href="#example-5">5. Example</a></li>
+      <li><a href="#example-6">6. Example</a></li> <li><a href="#example-7">7.
+              Example</a></li> <li><a href="#example-8">8. Example</a></li>
+      <li><a href="#example-9">9. Example</a></li> <li><a
+             href="#example-10">10. Example</a></li> </ol> </div> </div> <div
+             class="wrap p-t-1 p-b-2"> <h3 id="example-1" class="smaller
+                 underlined anchored"> <a href="#example-1"
+                                          class="hidden-anchor"> <svg
+                                          class="icon"> <use
+                                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                                          xlink:href="../assets/images/icons.svg#link"></use>
+                 </svg> </a> <span>1. Opening a saved view config</span> </h3>
+
+                 <p> View configurations are described as JSON data structures.
+                 All of the information necessary to reconstruct a particular
+                 view is present in this data structure. When exported, a entry
+                 is stored in the server which can be identified using a UUID.
+                 To load this configuration, simply point the browser to the 
+                 the visualization page with the parameter `?config=uuid`.</p>
+                 <br>
+
+                 <b>Example:</b> <br><br><br>
+                 
+                 <a href="/visualization/?config=CQXE2K_vTaS11wS23ea37g">
+                     /visualization/?config=CQXE2K_vTaS11wS23ea37g</a>
+                 </p>
 
       <h3 id="example-2" class="smaller underlined anchored">
         <a href="#example-2" class="hidden-anchor">
