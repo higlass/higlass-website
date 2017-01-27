@@ -44,23 +44,8 @@ h1, h2, h3, h4, h5, h6, p, li {
   transition: font-size $normal-transition $easing;
 }
 
-h1 {
-  font-size: 3rem;
-  margin: 0;
-  text-transform: uppercase;
-  color: transparentize($blue, 0.075);
-  line-height: 1;
-
-  .logo {
-    float: right;
-    width: 2.5rem;
-    height: 3rem;
-    color: transparentize($primary, 0.1);
-  }
-}
-
 h2 {
-  font-size: 1.75rem;
+  font-size: 2rem;
 }
 
 h1 + h2 {
@@ -71,7 +56,7 @@ h1 + h2 {
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 
   &.smaller {
     margin-top: 1.5rem;
@@ -462,7 +447,7 @@ h5.iconized {
 }
 
 h3.iconized {
-  height: 3rem;
+  height: 2.25rem;
 }
 
 h4.iconized {
@@ -624,7 +609,7 @@ body.dark-theme {
 /* 960px */
 @media screen and (min-width: 60em) {
   body {
-    font-size: 20px;
+    // font-size: 20px;
   }
 
   .wrap {
@@ -640,7 +625,7 @@ body.dark-theme {
 /* 1280px */
 @media screen and (min-width: 80em) {
   body {
-    font-size: 22px;
+    // font-size: 22px;
   }
 
   .wrap {
@@ -656,7 +641,7 @@ body.dark-theme {
 /* 1600px */
 @media screen and (min-width: 100em) {
   body {
-    font-size: 24px;
+    // font-size: 24px;
   }
 
   .abstract {
