@@ -7,7 +7,6 @@ import { requestNextAnimationFrame } from '../utils/request-animation-frame';
 const query = getQueryParams(document.location.search);
 
 const baseConfigId = query.config ?
-  // query.config : 'VtIjtGRFRfOZfAdyXx2YUQ';   //plain view
   query.config : 'B80L-PFiTLihXPGLcYvXbg';
 
 const launchHg = config => hglib.HgComponent(

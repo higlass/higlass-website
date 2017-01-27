@@ -57,26 +57,36 @@
 
   .btn {
     margin: 0.75rem 0.5rem;
-    padding: 0 0.375rem;
+    padding: 0;
+    height: 1.5rem;
     color: $gray-darker;
     font-size: 0.8rem;
     line-height: 1.5rem;
     border: 0;
     border-radius: 0.25rem;
-    box-shadow: none;
-    background: $gray-lighter;
+    box-shadow: 0 0 0 1px $gray-lighter;
+    background: none;
     transition: all $fast-transition $easing;
 
     &:hover,
     &:focus {
       color: $white;
       background: $black;
+      box-shadow: 0 0 0 1px $black;
     }
 
     &.is-active,
     &:active {
       color: $white;
       background: $primary;
+      box-shadow: 0 0 0 1px $primary;
+    }
+
+    .icon {
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      padding: 0.33rem;
     }
   }
 
