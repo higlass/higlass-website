@@ -18,7 +18,13 @@ $ npm install
 **Note**: If you forgot to add `--recursive` do the following to pull the submodules
 
 ```
-$ git submodule init && git submodule update --recursive
+$ git submodule update --init --recursive --remote
+```
+
+In order to update the wiki run:
+
+```
+$ git submodule update --recursive --remote
 ```
 
 **Developmental server:**

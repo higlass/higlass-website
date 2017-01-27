@@ -4,3 +4,4 @@ dist
 *.lock
 *.swp
 *~
+*.zip
