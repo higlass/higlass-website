@@ -12,11 +12,14 @@
 
   .fwh {
     position: absolute;
-    top: 0;
     right: 0;
-    bottom: 0;
     left: 0;
+    height: 6.25rem;
   }
+}
+
+.fwh {
+    height: 25rem;
 }
 
 body.dark-theme .four-third {
