@@ -77,7 +77,6 @@ h5 {
 p {
   margin: 0.5rem 0;
   padding: 0;
-  text-align: justify;
 }
 
 p.smaller {
@@ -345,7 +344,7 @@ h3.anchored {
   list-style: none;
 }
 
-.two-column-list li {
+.two-column-list > li {
   width: 50%;
 
   &:nth-child(odd) {
@@ -357,7 +356,7 @@ h3.anchored {
   }
 }
 
-.three-column-list li {
+.three-column-list > li {
   width: 33.33%;
 
   &:nth-child(3n+1) {
@@ -373,22 +372,22 @@ h3.anchored {
   }
 }
 
-ul.medium-spacing li,
-ol.medium-spacing li {
+ul.medium-spacing > li,
+ol.medium-spacing > li {
   margin-top: 0.25em;
   margin-bottom: 0.25em;
 }
 
-ul.large-spacing li,
-ol.large-spacing li {
+ul.large-spacing > li,
+ol.large-spacing > li {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
 
-ul.medium-spacing li,
-ul.large-spacing li,
-ol.medium-spacing li,
-ol.large-spacing li {
+ul.medium-spacing > li,
+ul.large-spacing > li,
+ol.medium-spacing > li,
+ol.large-spacing > li {
   &:first-child {
     margin-top: 0;
   }
@@ -563,6 +562,14 @@ ul.iconized {
 
 a .icon {
   cursor: pointer;
+}
+
+ul.badges li,
+ol.badges li {
+  color: $gray-medium;
+  border: 1px solid $gray-lightest;
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.25rem;
 }
 
 #sub,
