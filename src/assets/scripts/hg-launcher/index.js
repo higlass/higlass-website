@@ -6,7 +6,8 @@ import dropJson from '../utils/drop-json';
 const query = getQueryParams(document.location.search);
 
 const baseConfigId = query.config ?
-  query.config : 'G8DKPkbdT8i57a3t9TObPA';
+  //query.config : 'VtIjtGRFRfOZfAdyXx2YUQ';   //plain view
+  query.config : 'B80L-PFiTLihXPGLcYvXbg';
 
 const launchHg = config => hglib.HgComponent(
   document.querySelector('#higlass'),
@@ -34,4 +35,4 @@ dropJson(document.body, (event) => {
   reader.readAsText(file);
 });
 
-launchHg(`http://52.45.229.11/viewconfs/?d=${baseConfigId}`);
+launchHg(`http://higlass.site/api/v1/viewconfs/?d=${baseConfigId}`);

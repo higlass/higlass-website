@@ -29,7 +29,7 @@
   "dependencies": {
     "domtastic": "0.12.3",
     "gulp-marked": "flekschas/gulp-marked",
-    "higlass": "hms-dbmi/higlass#table-layout",
+    "higlass": ">=0.4.8",
     "marked": "0.3.6",
     "purecss-sass": "0.6.2"
   },
