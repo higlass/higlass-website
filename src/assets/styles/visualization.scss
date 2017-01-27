@@ -1,10 +1,3 @@
-#higlass {
-  > div {
-    width: 100%;
-    height: 100%;
-  }
-}
-
 .indicator {
   position: absolute;
   top: -1.8rem;
@@ -19,12 +12,13 @@
 }
 
 #dropNotify {
+  position: fixed !important;
   z-index: -1;
   color: $gray-darkest;
   font-size: 2em;
   font-weight: bold;
   text-transform: uppercase;
-  background: transparentize($gray-light, 0.1);
+  background: $gray-light;
 }
 
 #topbar,
@@ -42,5 +36,16 @@ body.is-dragging-over {
   #sub,
   #footer {
     opacity: 0.125;
+  }
+}
+
+body.dark-theme {
+  .indicator {
+    background: $gray-darker;
+  }
+
+  #dropNotify {
+    color: $gray-dark;
+    background: $black;
   }
 }

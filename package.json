@@ -28,7 +28,9 @@
   ],
   "dependencies": {
     "domtastic": "0.12.3",
-    "higlass": "hms-dbmi/higlass#table-layout",
+    "gulp-marked": "flekschas/gulp-marked",
+    "higlass": "hms-dbmi/higlass#develop",
+    "marked": "0.3.6",
     "purecss-sass": "0.6.2"
   },
   "devDependencies": {
@@ -58,6 +60,7 @@
     "gulp-if": "2.0.2",
     "gulp-ignore": "2.0.2",
     "gulp-livereload": "3.8.1",
+    "gulp-modify": "0.1.1",
     "gulp-newer": "1.3.0",
     "gulp-notify": "2.2.0",
     "gulp-optimize-js": "1.1.0",
@@ -70,7 +73,7 @@
     "gulp-sourcemaps": "2.4.0",
     "gulp-uglify": "2.0.0",
     "gulp-util": "3.0.8",
-    "gulp-zip": "^3.2.0",
+    "gulp-zip": "3.2.0",
     "rollup": "0.36.4",
     "rollup-plugin-babel": "2.7.1",
     "rollup-plugin-node-resolve": "2.0.0",

@@ -1,9 +1,10 @@
 #topbar {
   position: relative;
+  font-size: 1.25rem;  // 20 / 16
   z-index: 2;
   background: transparentize($white, 0.1);
   box-shadow: 0 2px 0 0 transparentize($black, 0.95);
-  line-height: 2.5em;
+  line-height: 3rem;
 
   .branding:active,
   nav li a:active {
@@ -38,6 +39,7 @@
     font-weight: bold;
     color: $black;
     box-shadow: none;
+    font-size: 1.375rem;  // 22 / 16
 
     @include underline($black, -2px, 2px);
 
@@ -54,11 +56,11 @@
   }
 
   .btn {
-    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin: 0.75rem 0.5rem;
     padding: 0 0.375rem;
     color: $gray-darker;
-    font-size: 0.625em;
-    line-height: 2.5em;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
     border: 0;
     border-radius: 0.25rem;
     box-shadow: none;
@@ -207,7 +209,7 @@ body.dark-theme #topbar {
 
   .btn {
     color: $gray-darkest;
-    background: $gray-light;
+    background: $gray-medium;
 
     &:hover,
     &:focus {
@@ -409,9 +411,22 @@ body.dark-theme-disabled #topbar .disable-dark-theme {
 }
 
 /* 960px */
-@media screen and (min-width: 60em) {
-  #topbar,
-  #topbar .btn {
-    line-height: 2em;
-  }
-}
+// @media screen and (min-width: 60em) {
+//   #topbar {
+//     font-size: 20px;
+//   }
+// }
+
+// /* 1280px */
+// @media screen and (min-width: 80em) {
+//   #topbar {
+//     font-size: 22px;
+//   }
+// }
+
+// /* 1600px */
+// @media screen and (min-width: 100em) {
+//   #topbar {
+//     font-size: 24px;
+//   }
+// }
