@@ -61,7 +61,7 @@ export const cancelAnimationFrame = (function () {
 const nextAnimationFrame = (function () {
   const ids = {};
 
-  function requestId() {
+  function requestId () {
     let id;
     do {
       id = Math.floor(Math.random() * 1E9);
