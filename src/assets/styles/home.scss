@@ -14,10 +14,15 @@
     position: absolute;
     right: 0;
     left: 0;
-    height: 100px;
+    height: 6.25rem;
   }
 }
 
+.fwh {
+    height: 25rem;
+}
+
+>>>>>>> c2baf04fe64d6646da2a4151e90abcc9e66f8577
 body.dark-theme .four-third {
   border: 1px solid transparentize($white, 0.95);
 }
