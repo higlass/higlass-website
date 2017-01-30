@@ -37,5 +37,5 @@ dropJson(document.body, (event) => {
 });
 
 requestNextAnimationFrame(() => {
-  launchHg(`http://higlass.site/api/v1/viewconfs/?d=${baseConfigId}`);
+  launchHg(`http://higlass.io/api/v1/viewconfs/?d=${baseConfigId}`);
 });
