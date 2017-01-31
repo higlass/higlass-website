@@ -7,7 +7,8 @@ import { requestNextAnimationFrame } from '../utils/request-animation-frame';
 const query = getQueryParams(document.location.search);
 
 const baseConfigId = query.config ?
-  query.config : 'B80L-PFiTLihXPGLcYvXbg';
+  // query.config : hglib.remoteViewConfig;
+  query.config : hglib.remoteViewConfig;
 
 const launchHg = config => hglib.HgComponent(
   document.querySelector('#higlass'),
@@ -37,5 +38,5 @@ dropJson(document.body, (event) => {
 });
 
 requestNextAnimationFrame(() => {
-  launchHg(`http://higlass.site/api/v1/viewconfs/?d=${baseConfigId}`);
+  launchHg(`/api/v1/viewconfs/?d=${baseConfigId}`);
 });
