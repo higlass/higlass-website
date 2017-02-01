@@ -220,10 +220,6 @@ svg.centered {
   padding: 0 3rem;
 }
 
-.abstract {
-  text-align: justify;
-}
-
 .border-bottom {
   position: relative;
 
@@ -356,18 +352,23 @@ h3.anchored {
 
 .three-column-list > li {
   width: 33.33%;
+  padding: 1rem;
 
-  &:nth-child(3n+1) {
-    padding: 0.25rem 0.8rem 0.25rem 0;
-  }
+  // &:nth-child(3n+1) {
+  //   padding: 0.25rem 0.8rem 0.25rem 0;
+  // }
 
-  &:nth-child(3n+2) {
-    padding: 0.25rem 0.4rem;
-  }
+  // &:nth-child(3n+2) {
+  //   padding: 0.25rem 0.4rem;
+  // }
 
-  &:nth-child(3n+3) {
-    padding: 0.25rem 0 0.25rem 0.8rem;
-  }
+  // &:nth-child(3n+3) {
+  //   padding: 0.25rem 0 0.25rem 0.8rem;
+  // }
+}
+
+.three-column-list > li.two-columns {
+  width: 66.66%;
 }
 
 ul.medium-spacing > li,
@@ -647,10 +648,6 @@ body.dark-theme {
 @media screen and (min-width: 100em) {
   body {
     // font-size: 24px;
-  }
-
-  .abstract {
-    font-size: 28px;
   }
 
   .wrap {
