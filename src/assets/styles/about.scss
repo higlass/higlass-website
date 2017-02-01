@@ -6,14 +6,29 @@ body.dark-theme #about-teaser {
   background-image: url('../images/about-teaser-dark.jpg');
 }
 
-.person {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-weight: bold;
+#author-list li {
+  margin: 0.25rem 0;
+  // padding-left: 0.25rem;
+
+  &:after {
+    content: ',';
+    margin-left: -0.2rem;
+    margin-right: 0.5rem;
+  }
+
+  &:last-child:after {
+    display: none;
+  }
+
+  &:nth-last-child(2):after {
+    content: 'and';
+    margin-left: 0.33rem;
+    margin-right: 0.33rem;
+  }
 }
 
-li:first-child .person {
-  margin-top: 0;
+.person {
+  display: inline-block;
 }
 
 .person + p {
