@@ -29,6 +29,10 @@
       "banner": "Global scripts",
       "name": "base"
     },
+    "data-sets": {
+      "banner": "HiGlass data-sets",
+      "name": "data-sets"
+    },
     "examples": {
       "banner": "HiGlass Examples",
       "name": "examples"

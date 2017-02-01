@@ -16,6 +16,19 @@
   border-radius: 0.25rem;
 }
 
+#data-set-list {
+  h4 {
+    margin: 1rem 0 0.25rem;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  li {
+    margin-right: 0.25rem;
+  }
+}
+
 body.dark-theme .datasets-figure {
   background: transparentize($white, 0.95);
 }

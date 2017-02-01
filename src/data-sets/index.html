@@ -104,43 +104,7 @@
 
   <main class="flex-i-g-1">
     <div class="wrap p-t-2 p-b-2">
-      <ul class="datasets no-list-style">
-        <li class="flex-c">
-          <figure class="datasets-figure"></figure>
-          <div class="flex-i-g-1">
-            <h3 class="smaller">Dataset Title</h3>
-            <p class="abstract smaller">Small description describing the dataset. This list could either be hard-coded or pulled form an external endpoint.</p>
-          </div>
-        </li>
-        <li class="flex-c">
-          <figure class="datasets-figure"></figure>
-          <div class="flex-i-g-1">
-            <h3 class="smaller">Dataset Title</h3>
-            <p class="abstract smaller">Small description describing the dataset. This list could either be hard-coded or pulled form an external endpoint.</p>
-          </div>
-        </li>
-        <li class="flex-c">
-          <figure class="datasets-figure"></figure>
-          <div class="flex-i-g-1">
-            <h3 class="smaller">Dataset Title</h3>
-            <p class="abstract smaller">Small description describing the dataset. This list could either be hard-coded or pulled form an external endpoint.</p>
-          </div>
-        </li>
-        <li class="flex-c">
-          <figure class="datasets-figure"></figure>
-          <div class="flex-i-g-1">
-            <h3 class="smaller">Dataset Title</h3>
-            <p class="abstract smaller">Small description describing the dataset. This list could either be hard-coded or pulled form an external endpoint.</p>
-          </div>
-        </li>
-        <li class="flex-c">
-          <figure class="datasets-figure"></figure>
-          <div class="flex-i-g-1">
-            <h3 class="smaller">Dataset Title</h3>
-            <p class="abstract smaller">Small description describing the dataset. This list could either be hard-coded or pulled form an external endpoint.</p>
-          </div>
-        </li>
-      </ul>
+      <ul id="data-set-list" class="datasets no-list-style"></ul>
     </div>
   </main>
 
@@ -176,7 +140,12 @@
 
   <!-- Content ends -->
 
+  <script src="https://d3js.org/d3-collection.v1.min.js"></script>
+  <script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
+  <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+  <script src="https://d3js.org/d3-request.v1.min.js"></script>
   <script src="../assets/scripts-third-party/ga.js"></script>
   <script src="../assets/scripts/base.js"></script>
+  <script src="../assets/scripts/data-sets.js"></script>
 </body>
 </html>
