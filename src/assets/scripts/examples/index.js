@@ -13,10 +13,10 @@ function render(examples) {
       class="examples-figure"
       style="background-image: url(${example.image ? example.image : ''})">
     </figure>
-    ${example.title ? `<p>${example.title}</p>` : ''}
   </a>
+  ${example.title ? `<a href="${example.url ? example.url : ''}">${example.title}</a>` : ''}
   ${example.description ? `<p class="smaller">${example.description}</p>` : ''}
-  ${example.location ? `<input class="one-line" onClick="this.select();" value="${example.location}" />` : ''}
+  ${example.location ? `<div class="smaller one-line location"><input onClick="this.select();" value="${example.location}" /></div>` : ''}
 </li>`;
   });
 
