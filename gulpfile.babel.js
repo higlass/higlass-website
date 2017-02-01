@@ -397,6 +397,11 @@ gulp.task('dev-watch', () => {
     `${config.src}/**/*.html`,
     ['html']
   ).on('change', bs.reload);
+
+  gulp.watch(
+    `${config.wiki}/**/*.md`,
+    ['prepare-html']
+  ).on('change', bs.reload);
 });
 
 
