@@ -54,8 +54,15 @@
         <a href=".." class="branding">
           <span class="higlass"><span class="higlass-hi">Hi</span>Glass</span>
         </a>
-        <a href="../visualization" class="btn is-uppercased">
-          Launch
+        <a
+          href="../visualization"
+          class="btn is-uppercased icon-only"
+          title="Launch HiGlass in Full Screen">
+          <svg class="icon">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="../assets/images/icons.svg#maximize"></use>
+          </svg>
         </a>
       </div>
       <nav class="flex-c flex-jc-e flex-a-s is-toggable">
@@ -98,36 +105,17 @@
   <main class="flex-i-g-1">
     <div class="border-bottom p-t-1 p-b-1">
       <div class="wrap smaller">
-        <p>One or two sentences saying what the user can find here</p>
+        <p>
+
+        The examples below are meant to showcase HiGlass's capabilities as a
+        contact map explorer as well as to point out loci of interest.
+
+        </p>
       </div>
     </div>
 
     <div class="wrap p-t-1 p-b-2">
-      <ul class="examples flex-c flex-w-w three-column-list no-list-style">
-        <li>
-          <figure class="examples-figure"></figure>
-          <p>Small description</p>
-        </li>
-        <li>
-          <figure class="examples-figure"></figure>
-          <p>Small description</p>
-        </li>
-        <li>
-          <figure class="examples-figure"></figure>
-          <p>Small description</p>
-        </li>
-        <li>
-          <figure class="examples-figure"></figure>
-          <p>Small description</p>
-        </li>
-        <li>
-          <figure class="examples-figure"></figure>
-          <p>Small description</p>
-        </li>
-        <li>
-          <figure class="examples-figure"></figure>
-          <p>Small description</p>
-        </li>
+      <ul id="example-list" class="examples flex-c flex-w-w no-list-style">
       </ul>
     </div>
   </main>
@@ -160,11 +148,16 @@
         </ul>
       </nav>
 
-      <p class="copyright centered">Copyright &copy; 2017 the President and Fellows of Harvard College. All content on this website is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">Creative Commons Attribution license (CC BY)</a>. Copyright of the linked papers is with the publishers.</p>
+      <p class="copyright centered">Copyright &copy; 2017 the President and Fellows of Harvard College.<br/>All content on this website is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">Creative Commons Attribution license (CC BY)</a>. Copyright of the linked papers is with the publishers.</p>
     </div>
   </footer>
 
+  <script src="https://d3js.org/d3-collection.v1.min.js"></script>
+  <script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
+  <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+  <script src="https://d3js.org/d3-request.v1.min.js"></script>
   <script src="../assets/scripts-third-party/ga.js"></script>
   <script src="../assets/scripts/base.js"></script>
+  <script src="../assets/scripts/examples.js"></script>
 </body>
 </html>

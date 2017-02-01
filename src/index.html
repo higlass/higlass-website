@@ -7,7 +7,7 @@
     <meta name="keywords" content="Hi-C, 4DN, Matrix Visualization, Peter Kerpedjiev, Fritz Lekschas, Nils Gehlenborg, Harvard Medical School, Department of Biomedical Informatics">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>HiGlass</title>
+    <title>HiGlass Site</title>
 
     <!-- http://www.jonathantneal.com/blog/understand-the-favicon/ -->
     <link rel="apple-touch-icon" href="assets/images/touchicon.png">
@@ -18,6 +18,7 @@
 
     <link href="//fonts.googleapis.com/css?family=Overpass:300,800" rel="stylesheet">
 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="assets/styles/index.css" type="text/css">
 
     <script>
@@ -54,8 +55,15 @@
         <a href="." class="branding">
           <span class="higlass"><span class="higlass-hi">Hi</span>Glass</span>
         </a>
-        <a href="visualization" class="btn is-uppercased">
-          Launch
+        <a
+          href="visualization"
+          class="btn is-uppercased icon-only"
+          title="Launch HiGlass in Full Screen">
+          <svg class="icon">
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="../assets/images/icons.svg#maximize"></use>
+          </svg>
         </a>
       </div>
       <nav class="flex-c flex-jc-e flex-a-s is-toggable">
@@ -98,38 +106,13 @@
   <main class="flex-i-g-1">
     <div class="wrap">
       <section class="flex-c m-t-1 m-b-2">
-        <p class="intro flex-i-g-1 p-r-2">Here would go the one or two-sentence pitch that tells our beloved users what HiGlass does and why they should grateful to have a chance to play with it.</p>
-
-        <div class="flex-i-g-1 p-l-2">
-          <p>Powered by Gehlenborg Lab</p>
-          <p>Latest news</p>
-        </div>
+        <p class="intro flex-i-g-1">
+          HiGlass is a tool for exploring genomic contact matrices and tracks. Please take a look at the <a href="examples">examples</a> and <a href="docs">documentation</a> for a description of the ways that it can be configured to explore and compare contact matrices at varying scales.
+        </p>
       </section>
-
       <div class="four-third">
-        <div class="fwh flex-c flex-jc-c flex-a-c">
-          <span>Here goes the teaser example for HiGlass</span>
-        </div>
+        <div id="higlass" class="full-dim"></div>
       </div>
-    </div>
-
-    <div class="wrap">
-      <h3 id="more-example" class="underlined anchored">
-        <a href="#more-example" class="hidden-anchor">
-          <svg class="icon">
-            <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="assets/images/icons.svg#link"></use>
-          </svg>
-        </a>
-        <span>More Example</span>
-      </h3>
-      <div class="four-third">
-        <div class="fwh flex-c flex-jc-c flex-a-c">
-          <span>Here goes the gallery with more examples.</span>
-        </div>
-      </div>
-      <p>Maybe some more text here&hellip; Maybe some more text here&hellip; Maybe some more text here&hellip; Maybe some more text here&hellip; Maybe some more text here&hellip; Maybe some more text here&hellip; Maybe some more text here&hellip; Maybe some more text here&hellip; Maybe some more text here&hellip; Maybe some more text here&hellip; YES some more text here!</p>
     </div>
   </main>
 
@@ -154,18 +137,19 @@
         <ul class="flex-c flex-jc-c flex-a-s no-list-style">
           <li><a href="." class="is-active">Home</a></li>
           <li><a href="about">About</a></li>
-          <li><a href="visualization">Visualization</a></li>
           <li><a href="examples">Examples</a></li>
           <li><a href="data-sets">Datasets</a></li>
           <li><a href="docs">Docs</a></li>
         </ul>
       </nav>
 
-      <p class="copyright centered">Copyright &copy; 2017 the President and Fellows of Harvard College. All content on this website is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">Creative Commons Attribution license (CC BY)</a>. Copyright of the linked papers is with the publishers.</p>
+      <p class="copyright centered">Copyright &copy; 2017 the President and Fellows of Harvard College.<br/>All content on this website is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">Creative Commons Attribution license (CC BY)</a>. Copyright of the linked papers is with the publishers.</p>
     </div>
   </footer>
 
   <script src="assets/scripts-third-party/ga.js"></script>
   <script src="assets/scripts/base.js"></script>
+  <script src="../assets/scripts-third-party/hglib.js"></script>
+  <script src="../assets/scripts/hg-launcher.js"></script>
 </body>
 </html>
