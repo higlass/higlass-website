@@ -218,17 +218,22 @@ body.dark-theme #topbar {
   }
 
   .btn {
-    color: $gray-darkest;
-    background: $gray-medium;
+    color: $gray-light;
+    box-shadow: 0 0 0 1px $gray-darker;
 
     &:hover,
     &:focus {
-      background: $white;
+      color: $white;
+      background: none;
+      box-shadow: 0 0 0 1px $white;
     }
 
     &.is-active,
+    &.is-active:focus,
     &:active {
+      color: $gray-darkest;
       background: $secondary;
+      box-shadow: 0 0 0 1px $secondary;
     }
   }
 
