@@ -581,6 +581,14 @@ body.dark-theme {
   #main {
     background: $gray-darkest;
   }
+
+  ul.badges li,
+  ol.badges li {
+    color: $gray-medium;
+    border: 1px solid $gray-darker;
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.25rem;
+  }
 }
 
 
