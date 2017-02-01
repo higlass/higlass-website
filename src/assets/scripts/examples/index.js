@@ -1,6 +1,6 @@
 import { json } from 'd3';  // eslint-disable-line
 
-const url = 'https://rawgit.com/pkerpedjiev/104f6c37fbfd0d7d41c73a06010a3b7e/raw/03c288aacd4672aa3ef3eee9b97709a42471e76e/higlass-examples.json';
+const url = 'https://cdn.rawgit.com/pkerpedjiev/104f6c37fbfd0d7d41c73a06010a3b7e/raw/bf43fb261ceead18c6b2b355479ac59967bbe8d7/higlass-examples.json';
 
 function render(examples) {
   let html = '';

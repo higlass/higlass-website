@@ -3,6 +3,7 @@ node_modules
 dist
 *.log
 *.lock
+*.swo
 *.swp
 *~
 *.zip
