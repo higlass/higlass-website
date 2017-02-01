@@ -29,6 +29,10 @@
       "banner": "Global scripts",
       "name": "base"
     },
+    "examples": {
+      "banner": "HiGlass Examples",
+      "name": "examples"
+    },
     "hg-launcher": {
       "banner": "HiGlass Launcher",
       "name": "hg-launcher"
@@ -36,7 +40,8 @@
   },
   "markedOptions": {},
   "rollupExternals": [
-    "hglib"
+    "hglib",
+    "d3"
   ],
   "rollupGlobals": {
     "hglib": "hglib"
