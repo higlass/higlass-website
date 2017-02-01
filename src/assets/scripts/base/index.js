@@ -15,3 +15,7 @@ export function disableDarkTheme() {
 
 /* eslint-disable no-unused-vars */
 const toggler = new MenuToggler(document.querySelector('#topbar .menu-toggler'));
+
+export default {
+  disableDarkTheme
+};
