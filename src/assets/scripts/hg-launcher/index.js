@@ -2,18 +2,17 @@ import * as hglib from 'hglib';  // eslint-disable-line
 
 import getQueryParams from '../utils/get-query-params';
 import dropJson from '../utils/drop-json';
-import { requestNextAnimationFrame } from '../utils/request-animation-frame';
+// import { requestNextAnimationFrame } from '../utils/request-animation-frame';
 
 const query = getQueryParams(document.location.search);
-
-const baseConfigId = query.config ?
-  // query.config : hglib.remoteViewConfig;
-  query.config : hglib.defaultViewConfig;
 
 const launchHg = config => hglib.createHgComponent(
   document.querySelector('#higlass'),
   config,
-  { bounded: true }
+  { bounded: true },
+  (api) => {
+    window.higlassApi = api;
+  }
 );
 
 dropJson(document.body, (event) => {
@@ -37,6 +36,9 @@ dropJson(document.body, (event) => {
   reader.readAsText(file);
 });
 
-requestNextAnimationFrame(() => {
-  launchHg(`/api/v1/viewconfs/?d=${baseConfigId}`);
-});
+
+if (query.config) {
+  launchHg(`/api/v1/viewconfs/?d=${query.config}`);
+} else {
+  launchHg(hglib.defaultViewConfig);
+}
