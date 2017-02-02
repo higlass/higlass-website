@@ -6,8 +6,6 @@ import { requestNextAnimationFrame } from '../utils/request-animation-frame';
 
 const query = getQueryParams(document.location.search);
 
-console.log('hglib:', hglib);
-
 const baseConfigId = query.config ?
   // query.config : hglib.remoteViewConfig;
   query.config : hglib.defaultViewConfig;
