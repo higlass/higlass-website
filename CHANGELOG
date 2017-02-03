@@ -3,3 +3,6 @@ v0.3.12
 - Changed 'Abstract' to 'Summary'
 - Changed 'Authors / Contributors' to 'Team'
 - Removed link to non-existant poster
+- Changed the title of the app from "HiGlass - Visualization" to "HiGlass - App"
+- Changed the title of the data sets from "HiGlass - Data sets" to "HiGlass - Datasets"
+- Examples are pulled from the latest raw git file
