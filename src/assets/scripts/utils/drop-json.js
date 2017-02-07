@@ -6,18 +6,28 @@ export default function dropJson(el, dropCallback) {
   const $el = $(el);
 
   document.addEventListener('dragenter', (event) => {
-    if (hasParent(event.target, el)) {
-      $el.addClass('is-dragging-over');
-    }
+    $el.addClass('is-dragging-over');
+
+    event.stopPropagation();
+    event.preventDefault();
+    return false;
   });
 
   document.addEventListener('dragover', (event) => {
+    event.stopPropagation();
     event.preventDefault();
+    return false;
   });
 
 
-  document.addEventListener('dragleave', () => {
-    $el.removeClass('is-dragging-over');
+  el.addEventListener('dragleave', (event) => {
+    if (event.target.id === 'drop-layer') {
+      $el.removeClass('is-dragging-over');
+    }
+
+    event.stopPropagation();
+    event.preventDefault();
+    return false;
   });
 
   document.addEventListener('drop', (event) => {
