@@ -1,14 +1,15 @@
 #footer {
-  color: $white;
-  background: $gray-darker;
-  box-shadow: inset 0 6rem 6rem -6rem rgba(0, 0, 0, 0.66);
+  color: $gray-dark;
+  background: #fff;
+  //box-shadow: inset 0 6rem 6rem -6rem rgba(0, 0, 0, 0.66);
+  border-top: 2px solid #eeeeee;
 
   a {
     box-shadow: inset 0 -1px 0 0 transparentize($white, 0.75);
 
     &:hover,
     &.is-active {
-      color: $white;
+      color: $gray-dark;
       box-shadow: inset 0 -2px 0 0 transparentize($white, 0);
     }
   }
@@ -19,7 +20,7 @@
 
   .logo-hms,
   .logo-dbmi {
-    color: $white;
+    color: $gray-dark;
     height: 2em;
   }
 
@@ -39,7 +40,7 @@
     li {
       &::before {
         content: '·';
-        color: transparentize($white, 0.5);
+        color: transparentize($gray-dark, 0.5);
       }
 
       &:first-child::before {
@@ -55,7 +56,7 @@
 
   .copyright {
     font-size: 0.8em;
-    color: transparentize($white, 0.5);
+    color: transparentize($gray-dark, 0.5);
   }
 }
 
