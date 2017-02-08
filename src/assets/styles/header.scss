@@ -6,6 +6,11 @@
   box-shadow: 0 2px 0 0 transparentize($black, 0.95);
   line-height: 3rem;
 
+  nav li a:hover,
+  nav li a:focus {
+    color: $black;
+  }
+
   .branding:active,
   nav li a:active {
     color: $primary;
