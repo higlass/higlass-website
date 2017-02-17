@@ -1,6 +1,6 @@
 {
   "name": "higlass-website",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "HiGlass - Fast Contact Matrix Visualization for the Web",
   "private": true,
   "repository": {
