@@ -1,6 +1,6 @@
 {
   "name": "higlass-website",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "description": "HiGlass - Fast Contact Matrix Visualization for the Web",
   "private": true,
   "repository": {
@@ -29,7 +29,7 @@
   "dependencies": {
     "domtastic": "0.12.3",
     "gulp-marked": "flekschas/gulp-marked",
-    "higlass": "0.4.39",
+    "higlass": "0.5.1",
     "marked": "0.3.6",
     "purecss-sass": "0.6.2"
   },
