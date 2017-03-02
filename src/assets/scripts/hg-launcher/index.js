@@ -36,5 +36,5 @@ dropJson(document.body, (event) => {
   reader.readAsText(file);
 });
 
-const viewconf_id = query.config ? query.config : 'default';
-launchHg(`/api/v1/viewconfs/?d=${viewconf_id}`); // TODO: Graceful fallback if no viewconf with this ID?
+const viewconfId = query.config ? query.config : 'default';
+launchHg(`/api/v1/viewconfs/?d=${viewconfId}`); // TODO: Graceful fallback if no viewconf with this ID?
