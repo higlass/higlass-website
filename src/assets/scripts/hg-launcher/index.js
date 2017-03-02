@@ -37,4 +37,4 @@ dropJson(document.body, (event) => {
 });
 
 const viewconf_id = query.config ? query.config : 'default';
-launchHg(`/api/v1/viewconfs/?d=${viewconf_id}`); # TODO: Graceful fallback if no viewconf with this ID?
+launchHg(`/api/v1/viewconfs/?d=${viewconf_id}`); // TODO: Graceful fallback if no viewconf with this ID?
