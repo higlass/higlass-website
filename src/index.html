@@ -6,6 +6,11 @@
     <meta name="description" content="Fast Contact Matrix Visualization for the Web">
     <meta name="keywords" content="Hi-C, 4DN, Matrix Visualization, Peter Kerpedjiev, Fritz Lekschas, Nils Gehlenborg, Harvard Medical School, Department of Biomedical Informatics">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Auth0 lock script -->
+  <script src="https://cdn.auth0.com/js/lock/10.8/lock.min.js"></script>
+
+  <!-- Setting the right viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <title>HiGlass</title>
 
@@ -88,6 +93,12 @@
               </svg>
             </a>
           </li>
+          <li class="separated-left flex-c flex-jc-c" id="login-li">
+              <a href="#" id="login-link">Log in</a>
+          </li>
+          <li class="separated-left flex-c flex-jc-c" style="display:none" id="logout-li">
+              <a href="#" id="logout-link">Log out</a>
+          </li>
           <li class="disable-dark-theme flex-c flex-jc-c">
             <a
               class="icon-only button-like flex-c flex-a-c"
@@ -159,5 +170,6 @@
   <script src="assets/scripts/base.js"></script>
   <script src="../assets/scripts-third-party/hglib.js"></script>
   <script src="../assets/scripts/hg-launcher.js"></script>
+  <script src="assets/scripts/authentication.js"></script>
 </body>
 </html>

@@ -40,6 +40,10 @@
     "hg-launcher": {
       "banner": "HiGlass Launcher",
       "name": "hg-launcher"
+    },
+    "authentication": {
+      "banner": "Authentication",
+      "name": "authentication"
     }
   },
   "markedOptions": {},
