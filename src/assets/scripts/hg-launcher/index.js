@@ -36,9 +36,5 @@ dropJson(document.body, (event) => {
   reader.readAsText(file);
 });
 
-
-if (query.config) {
-  launchHg(`/api/v1/viewconfs/?d=${query.config}`);
-} else {
-  launchHg(hglib.defaultViewConfig);
-}
+const viewconfId = query.config ? query.config : 'default';
+launchHg(`/api/v1/viewconfs/?d=${viewconfId}`); // TODO: Graceful fallback if no viewconf with this ID?
