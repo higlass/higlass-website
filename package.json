@@ -86,6 +86,7 @@
     "compile": "gulp compile --production",
     "lint": "eslint src/scripts scripts gulpfile.babel.js",
     "start": "gulp serve",
+    "update-wiki": "git submodule update --remote --merge",
     "test": "echo \"Error: no test specified\""
   }
 }
