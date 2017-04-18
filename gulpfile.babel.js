@@ -28,6 +28,7 @@ import sass from 'gulp-sass';
 import semver from 'semver';
 import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
+import wrap from 'gulp-wrap';
 import zip from 'gulp-zip';
 
 import rollup from './scripts/gulp-rollup';
@@ -53,8 +54,8 @@ renderer.heading = (text, level) => {
   const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
 
   return `
-<h${level + 1} id="${escapedText}" class="smaller underlined anchored">
-  <a href="${escapedText}" class="hidden-anchor">
+<h${level} id="${escapedText}" class="underlined anchored">
+  <a href="#${escapedText}" class="hidden-anchor">
     <svg class="icon">
       <use
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -395,7 +396,7 @@ gulp.task('dev-watch', () => {
 
   gulp.watch(
     `${config.src}/**/*.html`,
-    ['html']
+    ['prepare-html']
   ).on('change', bs.reload);
 
   gulp.watch(
@@ -404,16 +405,23 @@ gulp.task('dev-watch', () => {
   ).on('change', bs.reload);
 });
 
+const extractFileName =
+  file => file.path.slice(file.base.length).replace(/-/gi, ' ').slice(0, -3);
+
 
 // Parse wiki's markdown files
 gulp.task('wiki', () => gulp
   .src(`${config.wiki}/**/*.md`)
   .pipe(plumber())
+  .pipe(modify({
+    fileModifier: (file, contents) => `# ${extractFileName(file)}\n${contents}`
+  }))
   .pipe(marked(config.markedOptions))
+  .pipe(wrap('<div class="page"><%= contents %></div>'))
   .pipe(concat('index.html', { newLine: '\n' }))
   .pipe(modify({
     fileModifier: (file, contents) => {
-      // This is bit weird setup but well only grad the content of the
+      // This is bit weird setup but well only grab the content of the
       // concatenated wiki entries here in order to be able to paste them into
       // the docs HTML later.
       wikiHtml = contents;

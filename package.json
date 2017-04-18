@@ -73,6 +73,7 @@
     "gulp-sourcemaps": "2.4.1",
     "gulp-uglify": "2.0.1",
     "gulp-util": "3.0.8",
+    "gulp-wrap": "^0.13.0",
     "gulp-zip": "4.0.0",
     "rollup": "0.36.4",
     "rollup-plugin-babel": "2.7.1",
