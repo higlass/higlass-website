@@ -257,17 +257,21 @@ body.dark-theme .border-bottom::after {
   }
 }
 
-h3:hover .hidden-anchor,
-h3:target .hidden-anchor {
+h1:hover .hidden-anchor,
+h1:target .hidden-anchor,
+h2:hover .hidden-anchor,
+h2:target .hidden-anchor {
   transform: scale(1);
 }
 
 .hidden-anchor:hover,
-h3:target .hidden-anchor {
+h1:target .hidden-anchor,
+h2:target .hidden-anchor {
   opacity: 1;
 }
 
-h3:target  {
+h1:target,
+h2:target {
   color: $black;
 
   &.underlined::after {
@@ -287,7 +291,8 @@ h3:target  {
   }
 }
 
-body.dark-theme h3:target {
+body.dark-theme h1:target,
+body.dark-theme h2:target {
   color: $white;
 
   &.underlined::after {
@@ -302,7 +307,7 @@ body.dark-theme h3:target {
   }
 }
 
-h3.anchored {
+.anchored {
   transition: all $fast-transition $easing;
 }
 
