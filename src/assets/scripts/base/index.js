@@ -19,3 +19,9 @@ const toggler = new MenuToggler(document.querySelector('#topbar .menu-toggler'))
 export default {
   disableDarkTheme
 };
+
+document.querySelectorAll('.page > h1:first-child').forEach((el) => {
+  el.addEventListener('click', (event) => {
+    $(el).parent().toggleClass('active');
+  });
+});
