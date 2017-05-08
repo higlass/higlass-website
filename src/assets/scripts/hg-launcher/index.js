@@ -6,10 +6,10 @@ import dropJson from '../utils/drop-json';
 
 const query = getQueryParams(document.location.search);
 
-const launchHg = config => hglib.createHgComponent(
-  document.querySelector('#higlass'),
+const launchHg = (divId, config, bounded) => hglib.createHgComponent(
+  document.querySelector(divId),
   config,
-  { bounded: true },
+  { bounded },
   (api) => {
     window.higlassApi = api;
   }
@@ -37,4 +37,7 @@ dropJson(document.body, (event) => {
 });
 
 const viewconfId = query.config ? query.config : 'default';
-launchHg(`/api/v1/viewconfs/?d=${viewconfId}`); // TODO: Graceful fallback if no viewconf with this ID?
+
+launchHg('#higlass', `/api/v1/viewconfs/?d=${viewconfId}`, true); // TODO: Graceful fallback if no viewconf with this ID?
+launchHg('#higlass2', 'http://higlass.io/api/v1/viewconfs/?d=J4gJBkKrS6qm3ZCrVMoayA', true); // TODO: Graceful fallback if no viewconf with this ID?
+launchHg('#higlass3', 'http://higlass.io/api/v1/viewconfs/?d=ZigL43TcToGVUdlHegVHoQ', false); // TODO: Graceful fallback if no viewconf with this ID?
