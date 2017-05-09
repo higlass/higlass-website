@@ -6,18 +6,18 @@ import dropJson from '../utils/drop-json';
 
 const query = getQueryParams(document.location.search);
 
-const launchHg = (divId, config, bounded) => { 
-    if (!document.querySelector(divId))
-        return;
-
-    hglib.createHgComponent(
-      document.querySelector(divId),
+const launchHg = (divId, config, bounded) => {
+  if (!document.querySelector(divId)) {
+    return;
+  }
+  hglib.createHgComponent(
+    document.querySelector(divId),
       config,
       { bounded },
       (api) => {
         window.higlassApi = api;
       }
-    )
+    );
 };
 
 dropJson(document.body, (event) => {
