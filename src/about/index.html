@@ -36,7 +36,7 @@
       document.body.className += ' mobile';
     }
     if (
-      window.nightModus
+      window.nightModus  && false
     ) {
       if (!window.localStorage.getItem('higlass.disableDarkTheme')) {
         document.body.className += ' dark-theme';
@@ -102,7 +102,7 @@
   </header>
 
   <main class="flex-i-g-1">
-    <div class="teaser border-bottom">
+    <div class="teaser border-bottom fade-out">
       <figure id="about-teaser"></figure>
     </div>
 
@@ -153,7 +153,7 @@
 
       </p>
 
-      <ul class="no-list-style medium-spacing iconized smaller">
+      <ul class="no-list-style large-spacing iconized">
         <li class="iconized">
           <svg class="icon">
             <use
@@ -248,7 +248,7 @@
 
         <li>
           <span class="person">Burak Alver</span>
-        </li>        
+        </li>
 
         <li>
           <a href="http://vcg.seas.harvard.edu" target="_blank" class="person">Hanspeter Pfister</a>
@@ -274,15 +274,20 @@
   <footer id="footer" class="m-t-2 p-t-2 p-b-2">
     <div class="wrap">
       <div class="flex-c flex-jc-c">
-        <svg class="logo-hms">
+        <svg class="logo logo-hms" title="Harvard Medical School">
           <use
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="../assets/images/icons.svg#harvard-hms"></use>
+            xlink:href="../assets/images/icons.svg#logo-harvard-hms"></use>
         </svg>
-        <svg class="logo-dbmi">
+        <svg class="logo logo-seas" title="Harvard John A. Paulson School of Engineering and Applied Sciences">
           <use
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xlink:href="../assets/images/icons.svg#harvard-hms-dbmi"></use>
+            xlink:href="../assets/images/icons.svg#logo-harvard-seas"></use>
+        </svg>
+        <svg class="logo logo-mit" title="Massachusetts Institute of Technology">
+          <use
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xlink:href="../assets/images/icons.svg#logo-mit"></use>
         </svg>
       </div>
 

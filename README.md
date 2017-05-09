@@ -38,3 +38,10 @@ $ npm start
 ```bash
 $ npm run build
 ```
+
+
+**New version:**
+
+```bash
+$ npm version <major|minor|patch> && git push --tags
+```

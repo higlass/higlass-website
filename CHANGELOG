@@ -1,3 +1,11 @@
+v0.5.8
+
+- Hit the API for "default" viewconf if none specified in url.
+
+v0.3.19
+
+- New version of higlass client
+
 v0.3.12
 
 - Changed 'Abstract' to 'Summary'

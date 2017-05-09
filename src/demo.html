@@ -7,18 +7,19 @@
     <meta name="keywords" content="Hi-C, 4DN, Matrix Visualization, Peter Kerpedjiev, Fritz Lekschas, Nils Gehlenborg, Harvard Medical School, Department of Biomedical Informatics">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>HiGlass - About</title>
+    <title>HiGlass</title>
 
     <!-- http://www.jonathantneal.com/blog/understand-the-favicon/ -->
-    <link rel="apple-touch-icon" href="../assets/images/touchicon.png">
-    <link rel="icon" href="../assets/images/favicon.png"">
-    <!--[if IE]><link rel="shortcut icon" href="../assets/images/favicon.ico"><![endif]-->
+    <link rel="apple-touch-icon" href="assets/images/touchicon.png">
+    <link rel="icon" href="assets/images/favicon.png"">
+    <!--[if IE]><link rel="shortcut icon" href="assets/images/favicon.ico"><![endif]-->
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="../assets/images/tileicon.png">
+    <meta name="msapplication-TileImage" content="assets/images/tileicon.png">
 
     <link href="//fonts.googleapis.com/css?family=Overpass:300,800" rel="stylesheet">
 
-    <link rel="stylesheet" href="../assets/styles/index.css" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/styles/index.css" type="text/css">
 
     <script>
       // Minified version of isMobile included in the HTML since it's small
@@ -48,14 +49,19 @@
 
   <!-- Content starts -->
 
+  <div id="drop-notify" class="full-dim-win flex-c flex-jc-c flex-a-c">
+    <div id="drop-layer" class="full-dim-win"></div>
+    <span>Drop JSON Config</span>
+  </div>
+
   <header id="topbar">
     <div class="wrap flex-c flex-jc-sb">
       <div class="flex-c branding-launch">
-        <a href=".." class="branding">
+        <a href="." class="branding">
           <span class="higlass"><span class="higlass-hi">Hi</span>Glass</span>
         </a>
         <a
-          href="../app/"
+          href="app/"
           class="btn is-uppercased icon-only"
           title="Launch HiGlass in Full Screen">
           <svg class="icon">
@@ -67,9 +73,9 @@
       </div>
       <nav class="flex-c flex-jc-e flex-a-s is-toggable">
         <ul class="flex-c flex-jc-e flex-a-s no-list-style">
-          <li><a href="../about/">About</a></li>
-          <li><a href="../examples/">Examples</a></li>
-          <li><a href="." class="is-active">Docs</a></li>
+          <li><a href="about/">About</a></li>
+          <li><a href="examples/">Examples</a></li>
+          <li><a href="https://github.com/hms-dbmi/higlass/wiki">Docs</a></li>
           <li class="separated-left flex-c flex-jc-c">
             <a
               href="https://github.com/hms-dbmi?&q=higlass"
@@ -78,7 +84,7 @@
               <svg class="icon">
                 <use
                   xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xlink:href="../assets/images/icons.svg#github"></use>
+                  xlink:href="assets/images/icons.svg#github"></use>
               </svg>
             </a>
           </li>
@@ -89,7 +95,7 @@
               <svg class="icon">
                 <use
                   xmlns:xlink="http://www.w3.org/1999/xlink"
-                  xlink:href="../assets/images/icons.svg#moon"></use>
+                  xlink:href="assets/images/icons.svg#moon"></use>
               </svg>
             </a>
           </li>
@@ -102,8 +108,42 @@
   </header>
 
   <main class="flex-i-g-1">
-    <div class="wrap p-t-1 p-b-2">
-      <!-- Wiki goes here -->
+    <div class="wrap">
+      <section class="flex-c m-t-1 m-b-1">
+
+        <p class="intro flex-i-g-1">
+        HiGlass is a tool for exploring genomic contact matrices and tracks. Please take a look at the <a href="examples">examples</a> and <a href="https://github.com/hms-dbmi/higlass/wiki">documentation</a> for a description of the ways that it can be configured to explore and compare contact matrices. To load private data, higlass can be <a href="https://github.com/hms-dbmi/higlass/wiki#running-locally">run locally within a docker container</a>.
+        </p>
+      </section>
+      <p class="m-b-1">
+        <b> Single View </b>
+      </p>
+      <div class="four-third m-b-1">
+        <div id="higlass1" class="full-dim"></div>
+      </div>
+      <hr />
+      <p class="m-b-1">
+        <b> Two Linked Views </b>
+      </p>
+
+      <p class="m-b-1">
+        HiGlass can also be configured to show two or more views. These views can be synchronized to always show the same
+        location. For more information, please see the documentation about <a href="https://github.com/hms-dbmi/higlass/wiki/Common-Tasks#replacing-tracks">replacing tracks</a>, <a href="https://github.com/hms-dbmi/higlass/wiki/View-Operations#adding-new-views">adding new views</a>, and <a href="https://github.com/hms-dbmi/higlass/wiki/View-Operations#view-synchronization">synchronizing the locations of different views</a>.
+      </p>
+      <div class="nine-fifth">
+        <div id="higlass2" class="full-dim"></div>
+      </div>
+
+      <p class="m-b-1">
+        <b> Genome browser-like view</b>
+      </p>
+
+      <p class="m-b-1">
+        HiGlass can also be configured to show two or more views. These views can be synchronized to always show the same
+        location. For more information, please see the documentation about <a href="https://github.com/hms-dbmi/higlass/wiki/View-Operations#adding-new-views">adding new views</a>, and <a href="https://github.com/hms-dbmi/higlass/wiki/View-Operations#view-synchronization">synchronizing the locations of different views</a>.
+      </p>
+        <div id="higlass3" ></div>
+      
     </div>
   </main>
 
@@ -131,11 +171,10 @@
 
       <nav>
         <ul class="flex-c flex-jc-c flex-a-s no-list-style">
-          <li><a href="..">Home</a></li>
-          <li><a href="../about/">About</a></li>
-          <li><a href="../app/">App</a></li>
-          <li><a href="../examples/">Examples</a></li>
-          <li><a href="." class="is-active">Docs</a></li>
+          <li><a href="." class="is-active">Home</a></li>
+          <li><a href="about/">About</a></li>
+          <li><a href="examples/">Examples</a></li>
+          <li><a href="https://github.com/hms-dbmi/higlass/wiki">Docs</a></li>
         </ul>
       </nav>
 
@@ -143,7 +182,9 @@
     </div>
   </footer>
 
-  <script src="../assets/scripts-third-party/ga.js"></script>
-  <script src="../assets/scripts/base.js"></script>
+  <script src="assets/scripts-third-party/ga.js"></script>
+  <script src="assets/scripts/base.js"></script>
+  <script src="assets/scripts-third-party/hglib.js"></script>
+  <script src="assets/scripts/hg-launcher.js"></script>
 </body>
 </html>
