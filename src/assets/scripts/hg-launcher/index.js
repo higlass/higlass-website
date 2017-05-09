@@ -6,14 +6,19 @@ import dropJson from '../utils/drop-json';
 
 const query = getQueryParams(document.location.search);
 
-const launchHg = (divId, config, bounded) => hglib.createHgComponent(
-  document.querySelector(divId),
-  config,
-  { bounded },
-  (api) => {
-    window.higlassApi = api;
-  }
-);
+const launchHg = (divId, config, bounded) => { 
+    if (!document.querySelector(divId))
+        return;
+
+    hglib.createHgComponent(
+      document.querySelector(divId),
+      config,
+      { bounded },
+      (api) => {
+        window.higlassApi = api;
+      }
+    )
+};
 
 dropJson(document.body, (event) => {
   const file = event.dataTransfer.files[0];
@@ -39,5 +44,6 @@ dropJson(document.body, (event) => {
 const viewconfId = query.config ? query.config : 'default';
 
 launchHg('#higlass', `/api/v1/viewconfs/?d=${viewconfId}`, true); // TODO: Graceful fallback if no viewconf with this ID?
-launchHg('#higlass2', 'http://higlass.io/api/v1/viewconfs/?d=J4gJBkKrS6qm3ZCrVMoayA', true); // TODO: Graceful fallback if no viewconf with this ID?
-launchHg('#higlass3', 'http://higlass.io/api/v1/viewconfs/?d=ZigL43TcToGVUdlHegVHoQ', false); // TODO: Graceful fallback if no viewconf with this ID?
+launchHg('#higlass1', 'http://higlass.io/api/v1/viewconfs/?d=default', true); // TODO: Graceful fallback if no viewconf with this ID?
+launchHg('#higlass2', 'http://higlass.io/api/v1/viewconfs/?d=twoviews', true); // TODO: Graceful fallback if no viewconf with this ID?
+launchHg('#higlass3', 'http://higlass.io/api/v1/viewconfs/?d=browserlike', false); // TODO: Graceful fallback if no viewconf with this ID?
