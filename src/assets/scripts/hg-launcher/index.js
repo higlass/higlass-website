@@ -44,6 +44,11 @@ dropJson(document.body, (event) => {
 const viewconfId = query.config ? query.config : 'default';
 
 launchHg('#higlass', `/api/v1/viewconfs/?d=${viewconfId}`, true); // TODO: Graceful fallback if no viewconf with this ID?
+
 launchHg('#higlass1', 'http://higlass.io/api/v1/viewconfs/?d=default', true); // TODO: Graceful fallback if no viewconf with this ID?
 launchHg('#higlass2', 'http://higlass.io/api/v1/viewconfs/?d=twoviews', true); // TODO: Graceful fallback if no viewconf with this ID?
 launchHg('#higlass3', 'http://higlass.io/api/v1/viewconfs/?d=browserlike', false); // TODO: Graceful fallback if no viewconf with this ID?
+
+launchHg('#higlass_test1', 'http://test.higlass.io/api/v1/viewconfs/?d=test_default', true); // TODO: Graceful fallback if no viewconf with this ID?
+launchHg('#higlass_test2', 'http://test.higlass.io/api/v1/viewconfs/?d=test_twoviews', true); // TODO: Graceful fallback if no viewconf with this ID?
+launchHg('#higlass_test3', 'http://test.higlass.io/api/v1/viewconfs/?d=test_browserlike', false); // TODO: Graceful fallback if no viewconf with this ID?
