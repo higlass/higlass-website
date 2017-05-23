@@ -34,7 +34,7 @@ dropJson(document.body, (event) => {
     }
 
     if (newConfig) {
-      launchHg(newConfig);
+      launchHg('#higlass', newConfig, true);
     }
   });
 
