@@ -20,6 +20,8 @@
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="assets/styles/index.css" type="text/css">
+    <!--- The line below will be replaced with a versioned higlass script in the docker container -->
+    <link rel="stylesheet" href="assets/styles-third-party/hglib.css" type="text/css">
 
     <script>
       // Minified version of isMobile included in the HTML since it's small
@@ -155,9 +157,16 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.2/pixi.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.31.0/react-bootstrap.min.js"></script>
+
   <script src="assets/scripts-third-party/ga.js"></script>
   <script src="assets/scripts/base.js"></script>
+  <!--- The line below will be replaced with a versioned higlass script in the docker container -->
   <script src="assets/scripts-third-party/hglib.js"></script>
   <script src="assets/scripts/hg-launcher.js"></script>
+
 </body>
 </html>
