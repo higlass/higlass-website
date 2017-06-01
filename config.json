@@ -3,6 +3,7 @@
     "images": "assets/images",
     "scripts": "assets/scripts",
     "scriptsThirdParty": "assets/scripts-third-party",
+    "stylesThirdParty": "assets/styles-third-party",
     "styles": "assets/styles",
     "videos": "assets/videos"
   },
@@ -60,6 +61,9 @@
   ],
   "thirdPartyScripts": [
     "node_modules/higlass/dist/scripts/hglib.js"
+  ],
+  "thirdPartyStyles": [
+    "node_modules/higlass/dist/styles/hglib.css"
   ],
   "wiki": "wiki"
 }

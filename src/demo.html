@@ -20,6 +20,8 @@
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="assets/styles/index.css" type="text/css">
+    <!--- The line below will be replaced with a versioned higlass script in the docker container -->
+    <link rel="stylesheet" href="assets/styles-third-party/hglib.css" type="text/css">
 
     <script>
       // Minified version of isMobile included in the HTML since it's small
@@ -112,8 +114,23 @@
       <section class="flex-c m-t-1 m-b-1">
 
         <p class="intro flex-i-g-1">
-        HiGlass is a tool for exploring genomic contact matrices and tracks. Please take a look at the <a href="examples">examples</a> and <a href="https://github.com/hms-dbmi/higlass/wiki">documentation</a> for a description of the ways that it can be configured to explore and compare contact matrices. To load private data, higlass can be <a href="https://github.com/hms-dbmi/higlass/wiki#running-locally">run locally within a docker container</a>. The HiC data in the examples below is from Rao et al. (2014) <a href="#references">[1]</a>.
+
+        HiGlass is a tool for exploring genomic contact matrices and tracks.
+        Please take a look at the <a href="examples">examples</a> and <a
+        href="https://github.com/hms-dbmi/higlass/wiki">documentation</a> for a
+    description of the ways that it can be configured to explore and compare
+    contact matrices. To load private data, HiGlass can be <a
+    href="https://github.com/hms-dbmi/higlass/wiki#running-locally">run locally
+within a Docker container</a>. The HiC data in the examples below is from Rao
+et al. (2014) <a href="#references">[2]</a>.
+
+        <br />
+        <br />
+
+        A preprint of the paper describing HiGlass is <a href="http://biorxiv.org/content/early/2017/03/31/121889">available on bioRxiv</a> <a href="#references">[1]</a>.
+
         </p>
+
       </section>
       <p class="m-b-1">
         <b> Single View </b>
@@ -164,7 +181,7 @@
         top as well as two detail views below. The positions of the detail views are shown on the overview
         using <a href="https://github.com/hms-dbmi/higlass/wiki/Viewport-projection">viewport projections</a>.
         Blue gene annotations are on the + strand while red annotations are on the - strand. The data is
-        from Busslinger et al (2017) <a href="#references">[2]</a> and shows the accumulation of cohesin at sites of convergent
+        from Busslinger et al (2017) <a href="#references">[3]</a> and shows the accumulation of cohesin at sites of convergent
         transcription in CTCF / Wapl double knock-out mouse embryonic fibroblasts.
 
       </p>
@@ -174,10 +191,11 @@
         <b><a name="references">References</a></b>
         </p>
         <p>
-        [1] Rao, Suhas SP, et al. "A 3D map of the human genome at kilobase resolution reveals principles of chromatin looping." <i>Cell</i> 159.7 (2014): 1665-1680.
+        [1] Kerpedjiev, Peter, et al. "HiGlass: Web-based visual comparison and exploration of genome interaction maps." bioRxiv (2017): 121889.
+        [2] Rao, Suhas SP, et al. "A 3D map of the human genome at kilobase resolution reveals principles of chromatin looping." <i>Cell</i> 159.7 (2014): 1665-1680.
         </p>
         <p>
-        [2] Busslinger, Georg A., et al. "Cohesin is positioned in mammalian genomes by transcription, CTCF and Wapl." <i>Nature</i> 544.7651 (2017): 503-507.
+        [3] Busslinger, Georg A., et al. "Cohesin is positioned in mammalian genomes by transcription, CTCF and Wapl." <i>Nature</i> 544.7651 (2017): 503-507.
         </p>
     </div>
   </main>
@@ -217,8 +235,14 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.2/pixi.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.31.0/react-bootstrap.min.js"></script>
+
   <script src="assets/scripts-third-party/ga.js"></script>
   <script src="assets/scripts/base.js"></script>
+  <!--- The line below will be replaced with a versioned higlass script in the docker container -->
   <script src="assets/scripts-third-party/hglib.js"></script>
   <script src="assets/scripts/hg-launcher.js"></script>
 </body>

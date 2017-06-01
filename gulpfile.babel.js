@@ -292,6 +292,16 @@ gulp.task('js-npm-scripts', () => gulp
   .pipe(bs.reload({ stream: true }))
 );
 
+// Copy over specific npm styles
+gulp.task('css-npm-styles', () => gulp
+  .src(config.thirdPartyStyles)
+  .pipe(plumber())
+  .pipe(flatten())
+  .pipe(newer(`${config.dist}/${config.assets.stylesThirdParty}`))
+  .pipe(gulp.dest(`${config.dist}/${config.assets.stylesThirdParty}`))
+  .pipe(bs.reload({ stream: true }))
+);
+
 
 // Third party JS scripts
 gulp.task('js-third-party', () => gulp
@@ -299,6 +309,15 @@ gulp.task('js-third-party', () => gulp
   .pipe(plumber())
   .pipe(newer(`${config.dist}/${config.assets.scriptsThirdParty}`))
   .pipe(gulp.dest(`${config.dist}/${config.assets.scriptsThirdParty}`))
+  .pipe(bs.reload({ stream: true }))
+);
+
+// Third party JS styles
+gulp.task('css-third-party', () => gulp
+  .src(`${config.src}/${config.assets.stylesThirdParty}/**/*.css`)
+  .pipe(plumber())
+  .pipe(newer(`${config.dist}/${config.assets.stylesThirdParty}`))
+  .pipe(gulp.dest(`${config.dist}/${config.assets.stylesThirdParty}`))
   .pipe(bs.reload({ stream: true }))
 );
 
@@ -454,6 +473,8 @@ gulp.task('build', (callback) => {
       'js',
       'js-third-party',
       'js-npm-scripts',
+      'css-third-party',
+      'css-npm-styles',
       'sass',
       'images',
       'videos',
