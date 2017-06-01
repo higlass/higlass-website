@@ -1,3 +1,8 @@
+v0.6.0
+
+- Use CSS files from the higlass package
+- Fixed typos
+
 v0.5.8
 
 - Hit the API for "default" viewconf if none specified in url.
