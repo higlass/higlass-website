@@ -1847,6 +1847,20 @@ ol {
     margin: 0;
     padding: 0
 }
+.fullscreen {
+    position: absolute;
+    padding-right: 4px;
+    background-color: white;
+    top: -12px;
+    right: 5px;
+    padding-left: 3px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    font-size: 9pt;
+    font-family: "Arial";
+    font-style: normal
+}
 .c1 {
     color: #000000;
     font-weight: 400;
@@ -2736,7 +2750,15 @@ ol {
    <p class="c6"><span>To address these shortcomings,</span><span>&nbsp;we created HiGlass, an open source, web-based application with a customizable interface designed to support</span><span>&nbsp;</span><span>multiscale contact map visualization across multiple resolutions, loci, and conditions (Supplementary Methods).</span><span>&nbsp;</span><span>HiGlass introduces the concept of </span><span class="c10">composable linked views</span><span class="c10">&nbsp;</span><span>for genomic data visualization (Supplementary Fig. 1)</span><span class="c10">.</span><span>&nbsp;This approach enables users to compose the layout, content, and synchronization of locus, zoom-level, and other view properties across multiple views (Supplementary Fig. 2). </span><span>These view compositions can range from the juxtaposition of two or more heatmaps (Fig. 1) to sophisticated collations of matrices, tracks and viewport projections (Fig. 2). </span><span>View compositions serve to display data at multiple scales, </span><span>to</span><span>&nbsp;corroborate </span><span>observations </span><span>with other types of evidence and to facilitate comparison</span><span>s</span><span>&nbsp;between experiments. </span><span>As</span><span>&nbsp;a web-based tool, HiGlass also supports storing and sharing of view compositions with other investigators and the public via hyper</span><span>links</span><span>. The tool can be used to access selected public datasets at </span><span class="c19"><a class="c0" href="http://higlass.io">http://higlass.io</a></span><span>, or </span><span>it may be </span><span>run locally and populated with private data using </span><span>a</span><span class="c1">&nbsp;provided Docker container.</span></p>
    <p class="c6 c9"><span class="c1"></span></p>
 
-         <div><div id="figure1" style="height: 800px" /></div>
+   <div>
+       <div style="position: relative">
+       <div style="padding: 10px; border: 1px solid black; position: relative;">
+           <span class="fullscreen"><span class="c3 c19 c25"><a class="c0" href="http://higlass.io/app/?config=Tf2-ublRTey9hiBKMlgzwg">Open in fullscreen</a></span></span>
+         <div>
+             <div id="figure1" style="height: 800px" />
+        </div>
+         </div>
+             
 <!--
    <p class="c6">
 
@@ -2751,7 +2773,10 @@ ol {
    -->
 
 
-   <p class="c6"><span class="c23 c3">Figure 1</span><span class="c23 c3">&nbsp;|</span><span class="c3">&nbsp;</span><span class="c3">A view composition highlighting the results from Schwarzer et al. </span><span class="c3">with data from WT</span><span class="c3">&nbsp;(left), and mutant</span><span class="c3">&nbsp;(&Delta;Nipbl, right) samples</span><span class="c3 c4">25</span><span class="c3">. The top two views are linked to each other by zoom and location such that they always display the same region at the same resolution. Comparing the control (left) and mutant (right) condition at this zoom level reveals the bleaching of TADs in the gene-poor region in the lower right hand part of the maps. The bottom two views, also linked to each other by zoom and location, show a zoomed in perspective where a more fragmented compartmentalization of the </span><span class="c3">&Delta;Nipbl</span><span class="c3 c10">&nbsp;</span><span class="c3">mutant</span><span class="c3">&nbsp;(right) as compared to WT (left) can be seen. The black rectangles in the top views, which are referred to as viewport projections in HiGlass, show the positions and extent of the bottom views (Supplementary Fig. 3). The white lines in the bottom left panel are a result of bins filtered during matrix balancing. An interactive version of this figure is available at </span><span class="c3 c19 c25"><a class="c0" href="http://higlass.io/app/?config=Tf2-ublRTey9hiBKMlgzwg">http://higlass.io/app/?config=Tf2-ublRTey9hiBKMlgzwg</a></span><span class="c3">.</span></p>
+   <p class="c6"><span class="c23 c3">Figure 1</span><span class="c23 c3">&nbsp;|</span><span class="c3">&nbsp;</span><span class="c3">An interactive view composition highlighting the results from Schwarzer et al. </span><span class="c3">with data from WT</span><span class="c3">&nbsp;(left), and mutant</span><span class="c3">&nbsp;(&Delta;Nipbl, right) samples</span><span class="c3 c4">25</span><span class="c3">. The top two views are linked to each other by zoom and location such that they always display the same region at the same resolution. Comparing the control (left) and mutant (right) condition at this zoom level reveals the bleaching of TADs in the gene-poor region in the lower right hand part of the maps. The bottom two views, also linked to each other by zoom and location, show a zoomed in perspective where a more fragmented compartmentalization of the </span><span class="c3">&Delta;Nipbl</span><span class="c3 c10">&nbsp;</span><span class="c3">mutant</span><span class="c3">&nbsp;(right) as compared to WT (left) can be seen. The black rectangles in the top views, which are referred to as viewport projections in HiGlass, show the positions and extent of the bottom views (Supplementary Fig. 3). The white lines in the bottom left panel are a result of bins filtered during matrix balancing. An full-screen version of this figure is available at </span><span class="c3 c19 c25"><a class="c0" href="http://higlass.io/app/?config=Tf2-ublRTey9hiBKMlgzwg">http://higlass.io/app/?config=Tf2-ublRTey9hiBKMlgzwg</a></span><span class="c3">.</span></p>
+             </div>
+    </div>
+
    <p class="c6 c9"><span class="c1"></span></p>
    <p class="c6"><span>To illustrate the utility of composable linked views, we used HiGlass to highlight key results of a recent study showing the effect of induced deletion of the cohesin loading factor </span><span class="c10">Nibpl</span><span>&nbsp;on chromosome organization in adult mouse hepatocytes</span><span class="c5 c4">25</span><span>. We </span><span>obtained</span><span>&nbsp;Hi-C contact data and binned it at multiple resolutions starting at</span><span>&nbsp;1 kb</span><span>&nbsp;</span><span>for</span><span>&nbsp;wild type (WT) and &Delta;Nipbl primary hepatocytes (Supplementary Methods). We loaded both samples as separate views (</span><span>Fig. 1</span><span>, top) and</span><span>&nbsp;</span><span>linked them via location and zoom level</span><span>.</span><span>&nbsp;</span><span>With t</span><span>he</span><span>&nbsp;two linked views, we could navigate to regions clearly showing the disappearance of features in the &Delta;Nipbl condition. For example, in the gene-poor region from chr14:80 Mb to chr14:100 Mb of mm9, we observe a robust &ldquo;bleaching&rdquo; of near-diagonal contact enrichment patterns. The patterns that disappeared are examples of TADs because they do not show the long range checkering characteristic of A/B compartments.</span><span>&nbsp;In contrast, in the relatively gene-rich region </span><span>upstream of chr14:80 Mb</span><span>, we see an enhancement of the checkered pattern and the emergence of a finer division of A/B regions in the &Delta;Nipbl condition. </span><span>To explore this region more closely, we created two additional linked views for WT and &Delta;Nipbl and navigated to the region between chr14:50 Mb and chr14:70 Mb</span><span>&nbsp;(Fig. 1, bottom)</span><span>.</span><span>&nbsp;</span><span>Adding H3K4me3 and H3K27ac ChIP-seq signal tracks revealed that these marks, while similar between conditions, correlate more strongly with the compartmentalization pattern in &Delta;Nipbl. </span><span>Finally, we used a viewport projection to mark the position of the bottom views relative to the top, resulting in the complete view composition shown in Fig. 1. This</span><span>&nbsp;interactive visual </span><span>recapitulation of key</span><span>&nbsp;results</span><span>&nbsp;from Schwarzer et al</span><span>&nbsp;illustrates how synchronized navigation across loci and </span><span>resolutions</span><span>&nbsp;by linking views between multiple conditions facilitates the exploration of the complex effects of global perturbations on chromosome organization at multiple scales.</span></p>
    <p class="c6 c9"><span class="c1"></span></p>
@@ -2772,11 +2797,20 @@ ol {
       </p>
 
    -->
-      <div><div id="figure2" style="height: 800px" /></div>
+   <div>
+       <div style="position: relative">
+       <div style="padding: 10px; border: 1px solid black; position: relative;">
+           <span class="fullscreen"><span class="c3 c19 c25"><a class="c0" href="http://higlass.io/app/?config=Q5LdNchQRLSZ_0yKsTEoiw">Open in fullscreen</a></span></span>
+         <div>
+             <div id="figure2" style="height: 800px" />
+        </div>
+         </div>
 
 
    <p class="c6 c9"><span class="c1"></span></p>
-   <p class="c6"><span class="c23 c3">Figure 2</span><span class="c3 c23">&nbsp;|</span><span class="c3">&nbsp;A view composition containing two views linked by location and zoom (top) and an independent (unlinked) zoomed out overview (bottom) (Supplementary Fig. 4). The two views on top show data from chromosome 14 (mm9) in the wild type and &Delta;Nipbl</span><span class="c3 c10">&nbsp;</span><span class="c3">conditions, respectively. The bottom view shows data from the mutant condition as well as a projection of the viewport visible in the top views. The patch visible in the &Delta;Nipbl</span><span class="c3 c10">&nbsp;</span><span class="c3">condition (top left) is notably absent from the control (right). The gene annotations, RNAseq, H3K27me and H3K4me3 tracks show the p</span><span class="c3">resence and transcription of the </span><span class="c3 c10">Dock5</span><span class="c3">&nbsp;and </span><span class="c3 c10">Mycbp2</span><span class="c3">&nbsp;genes on the - strand as well as the presence and transcription of the </span><span class="c3 c10">Gnrh1</span><span class="c3">&nbsp;and </span><span class="c3 c10">Cln5</span><span class="c3">&nbsp;genes on the + </span><span class="c3">strand</span><span class="c3">. </span><span class="c3">An interactive version of this figure is available at</span><span class="c3">&nbsp;</span><span class="c3 c25 c19"><a class="c0" href="http://higlass.io/app/?config=Q5LdNchQRLSZ_0yKsTEoiw">http://higlass.io/app/?config=Q5LdNchQRLSZ_0yKsTEoiw</a></span><span class="c3">.</span></p>
+   <p class="c6"><span class="c23 c3">Figure 2</span><span class="c3 c23">&nbsp;|</span><span class="c3">&nbsp;An interactive view composition containing two views linked by location and zoom (top) and an independent (unlinked) zoomed out overview (bottom) (Supplementary Fig. 4). The two views on top show data from chromosome 14 (mm9) in the wild type and &Delta;Nipbl</span><span class="c3 c10">&nbsp;</span><span class="c3">conditions, respectively. The bottom view shows data from the mutant condition as well as a projection of the viewport visible in the top views. The patch visible in the &Delta;Nipbl</span><span class="c3 c10">&nbsp;</span><span class="c3">condition (top left) is notably absent from the control (right). The gene annotations, RNAseq, H3K27me and H3K4me3 tracks show the p</span><span class="c3">resence and transcription of the </span><span class="c3 c10">Dock5</span><span class="c3">&nbsp;and </span><span class="c3 c10">Mycbp2</span><span class="c3">&nbsp;genes on the - strand as well as the presence and transcription of the </span><span class="c3 c10">Gnrh1</span><span class="c3">&nbsp;and </span><span class="c3 c10">Cln5</span><span class="c3">&nbsp;genes on the + </span><span class="c3">strand</span><span class="c3">. </span><span class="c3">An interactive version of this figure is available at</span><span class="c3">&nbsp;</span><span class="c3 c25 c19"><a class="c0" href="http://higlass.io/app/?config=Q5LdNchQRLSZ_0yKsTEoiw">http://higlass.io/app/?config=Q5LdNchQRLSZ_0yKsTEoiw</a></span><span class="c3">.</span></p>
+       </div>
+       </div>
    <p class="c6 c9"><span class="c1"></span></p>
    <p class="c6"><span>Using the same view composition</span><span>&nbsp;we noticed the appearance of </span><span>small dark patches away from the diagonal</span><span>. To investigate them we created a new composition containing an overview and two zoom- and location-linked detail </span><span>views</span><span>&nbsp;</span><span>(Fig. 2)</span><span>. By using the overview to find patches and comparing them using the detail views,</span><span>&nbsp;we established that</span><span>&nbsp;they are more </span><span>enriched in the mutant condition than in the wild type, that they represent interaction</span><span>&nbsp;between pairs of short active regions (type A compartment) and that they are closely aligned with gene annotations.</span><span>&nbsp;</span><span>Including RNA-seq and ChIP-seq tracks let us see that the genes which align with these patches are virtually always transcriptionally active</span><span class="c1">. This further supports the conclusion of Schwarzer et al. that the absence of cohesin loading leads to strengthened A/B compartmentalization. It also provides avenues for further investigation and analysis of the structural and regulatory consequences of cohesin loss.</span></p>
    <p class="c6 c9"><span class="c1"></span></p>
