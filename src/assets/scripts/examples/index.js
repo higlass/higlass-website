@@ -1,4 +1,4 @@
-import { json } from 'd3';  // eslint-disable-line
+import { json } from 'd3-request';
 
 const url = 'https://gist.githubusercontent.com/pkerpedjiev/104f6c37fbfd0d7d41c73a06010a3b7e/raw/higlass-examples.json';
 

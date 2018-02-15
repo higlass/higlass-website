@@ -1,4 +1,4 @@
-import { json } from 'd3';  // eslint-disable-line
+import { json } from 'd3-request';
 
 const url = 'http://higlass.io/api/v1/tilesets/';
 
