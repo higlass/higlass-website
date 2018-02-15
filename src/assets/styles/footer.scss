@@ -74,7 +74,21 @@ body.dark-theme #footer {
     }
   }
 
+  nav,
+  .logo {
+    transition: opacity $fast-transition $easing;
+  }
+
   .copyright {
     color: transparentize($white, 0.66);
+  }
+}
+
+body.darker-theme #footer {
+  background: $black;
+
+  nav,
+  .logo {
+    opacity: 0.75;
   }
 }
