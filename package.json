@@ -27,11 +27,12 @@
     }
   ],
   "dependencies": {
-    "domtastic": "0.12.3",
+    "d3-request": "1.0.6",
+    "domtastic": "0.15.5",
     "gulp-marked": "flekschas/gulp-marked",
-    "higlass": "0.8.2",
-    "marked": "0.3.6",
-    "purecss-sass": "0.6.2"
+    "higlass": "0.10.19",
+    "marked": "0.3.12",
+    "purecss-sass": "1.0.0"
   },
   "devDependencies": {
     "babel": "6.23.0",
@@ -43,7 +44,7 @@
     "browser-sync": "2.23.6",
     "eslint": "4.17.0",
     "eslint-config-airbnb": "16.1.0",
-    "eslint-plugin-babel": "4.1.1",
+    "eslint-plugin-babel": "4.1.2",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-react": "7.6.1",
@@ -74,12 +75,12 @@
     "gulp-uglify": "3.0.0",
     "gulp-util": "3.0.8",
     "gulp-zip": "4.1.0",
-    "rollup": "0.36.4",
-    "rollup-plugin-babel": "2.7.1",
-    "rollup-plugin-node-resolve": "2.0.0",
+    "rollup": "0.55.5",
+    "rollup-plugin-babel": "3.0.3",
+    "rollup-plugin-node-resolve": "3.0.3",
     "run-sequence": "2.2.1",
     "semver": "5.5.0",
-    "uglify-js": "2.7.5"
+    "uglify-js": "3.3.10"
   },
   "scripts": {
     "build": "gulp build --production",
