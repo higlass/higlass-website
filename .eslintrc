@@ -17,8 +17,11 @@
   "parser": "babel-eslint",
   "rules": {
     "comma-dangle": ["error", "never"],
+    "function-paren-newline": 0,
     "import/prefer-default-export": 1,
     "no-underscore-dangle": 0,
-    "no-console": 2
+    "no-console": 2,
+    "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
+    "prefer-destructuring": 0
   }
 }

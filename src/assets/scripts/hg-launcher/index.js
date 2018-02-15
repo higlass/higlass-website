@@ -12,12 +12,12 @@ const launchHg = (divId, config, bounded) => {
   }
   hglib.createHgComponent(
     document.querySelector(divId),
-      config,
-      { bounded },
-      (api) => {
-        window.higlassApi = api;
-      }
-    );
+    config,
+    { bounded },
+    (api) => {
+      window.higlassApi = api;
+    }
+  );
 };
 
 dropJson(document.body, (event) => {

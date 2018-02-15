@@ -52,7 +52,7 @@ function gulpRollup(_options_) {
         rollup(finalOptions).then((bundle) => {
           const res = bundle.generate(finalOptions);
 
-          _file.contents = new Buffer(res.code);
+          _file.contents = Buffer.from(res.code);
           const map = res.map;
           if (map) {
             // This makes sure the paths in the generated source map (file and
