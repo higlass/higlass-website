@@ -33,7 +33,10 @@
     }
 
     try {
-      if (!window.localStorage.getItem('higlass.disableDarkTheme')) {
+      const darkTheme = parseInt(window.localStorage.getItem('hgw.darkTheme'), 10);
+      if (darkTheme > 1) {
+        document.body.className = 'flex-c flex-d-c dark-theme darker-theme';
+      } else if (darkTheme === 1) {
         document.body.className = 'flex-c flex-d-c dark-theme';
       } else {
         document.body.className = 'flex-c flex-d-c';
@@ -147,16 +150,16 @@
 
 
       <p>
+        A preprint of the paper describing HiGlass is available
+        on bioRxiv <a href="https://doi.org/10.1101/121889" target="_blank">(https://doi.org/10.1101/121889)</a>.
 
-             A preprint of the paper describing HiGlass is available
-             on bioRxiv <a href="https://doi.org/10.1101/121889">(https://doi.org/10.1101/121889)</a>.
-
-           If you use HiGlass in your work, please cite:
-
-           <p style="color: #222"><a href="https://www.biorxiv.org/content/early/2017/10/30/121889">
-           Kerpedjiev, P., Abdennur, N., Lekschas, F., McCallum, C., Dinkla, K., Strobelt, H., ... & Gehlenborg, N. (2017). HiGlass: Web-based visual comparison and exploration of genome interaction maps. bioRxiv, 121889.
-           </a>
-           </p>
+        If you use HiGlass in your work, please cite:
+        <br/>
+        <strong>
+          <a href="https://www.biorxiv.org/content/early/2017/10/30/121889" target="_blank">
+          Kerpedjiev, P., Abdennur, N., Lekschas, F., McCallum, C., Dinkla, K., Strobelt, H., ... &amp; Gehlenborg, N. (2017). HiGlass: Web-based visual comparison and exploration of genome interaction maps. bioRxiv, 121889.
+          </a>
+        </strong>
       </p>
 
       <h3 id="source-code" class="iconized underlined anchored">

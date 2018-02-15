@@ -36,7 +36,10 @@
     }
 
     try {
-      if (!window.localStorage.getItem('higlass.disableDarkTheme')) {
+      const darkTheme = parseInt(window.localStorage.getItem('hgw.darkTheme'), 10);
+      if (darkTheme > 1) {
+        document.body.className = 'flex-c flex-d-c dark-theme darker-theme';
+      } else if (darkTheme === 1) {
         document.body.className = 'flex-c flex-d-c dark-theme';
       } else {
         document.body.className = 'flex-c flex-d-c';
