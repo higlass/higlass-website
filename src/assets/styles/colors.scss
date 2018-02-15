@@ -12,10 +12,13 @@ $gray-lightest: #eee;
 
 $blue: #0F5D92;
 $blue-dark-faded: adjust-color($blue, $saturation: -66%, $lightness: -15%);
-$orange: #f28c0c;
+$blue-light: #50afee;
+
+$yellow: #f5cc54;
+$orange: #e5a14f;
 
 $primary: $blue;
-$secondary: $orange;
+$secondary: $blue-light;
 
 $text: $gray-dark;
 $text-em: $gray-darkest;

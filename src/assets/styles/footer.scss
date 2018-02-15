@@ -56,16 +56,21 @@
 }
 
 body.dark-theme #footer {
-  background: $gray-darkest-extreme;
   color: $gray-light;
+  border-top-color: $gray-darkest-extreme;
+  background: $gray-darkest-extreme;
 
   a {
     box-shadow: inset 0 -1px 0 0 transparentize($white, 0.85);
 
-    &:hover,
-    &.is-active {
+    &:hover {
       color: $white;
       box-shadow: inset 0 -2px 0 0 transparentize($white, 0);
+    }
+
+    &.is-active {
+      color: inherit;
+      box-shadow: inset 0 -2px 0 0 transparentize($white, 0.35);
     }
   }
 
