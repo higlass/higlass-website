@@ -254,6 +254,10 @@ body.dark-theme #topbar {
     a {
       @include underline($white, -2px, 2px);
 
+      &:hover {
+        color: $white;
+      }
+
       &.is-active,
       &:hover.is-active {
         color: $secondary;
@@ -276,8 +280,44 @@ body.dark-theme #topbar {
 
   .disable-dark-theme,
   .disable-dark-theme a.icon-only:hover {
+    position: relative;
     display: flex;
-    color: $secondary !important;
+    color: $yellow;
+  }
+
+  .disable-dark-theme a.icon-only {
+    position: relative;
+
+    .icon {
+      transition: all $slow-transition $easing;
+    }
+  }
+
+  .disable-dark-theme a.icon-only:hover {
+    color: $orange;
+
+    .icon {
+      opacity: 0.33;
+      transform: translateY(0.95rem);
+    }
+  }
+
+  .disable-dark-theme .gradient {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: -webkit-linear-gradient(rgba(34,34,34,0) 0%, rgba(34,34,34,1) 100%);
+    background: -o-linear-gradient(rgba(34,34,34,0) 0%, rgba(34,34,34,1) 100%);
+    background: linear-gradient(rgba(34,34,34,0) 0%, rgba(34,34,34,1) 100%);
+    opacity: 0;
+    transition: opacity $slow-transition $easing;
+  }
+
+  .disable-dark-theme a.icon-only:hover .gradient {
+    opacity: 0.8;
   }
 
   .menu-toggler.c-hamburger {
