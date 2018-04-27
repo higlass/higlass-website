@@ -28,7 +28,7 @@
   "jsBundles": {
     "base": {
       "banner": "Global scripts",
-      "name": "base"
+      "name": "hgw"
     },
     "data-sets": {
       "banner": "HiGlass data-sets",

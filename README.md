@@ -39,9 +39,29 @@ $ npm start
 $ npm run build
 ```
 
-
 **New version:**
 
 ```bash
 $ npm version <major|minor|patch> && git push --tags
 ```
+
+**Update wiki:**
+
+```bash
+$ npm run update-wiki
+```
+
+## Dark Theme
+
+You like dark themes? We too! But it's experimental so if anything happens we can't help you.
+If you still want to go ahead please open the developer console and turn the lights off:
+
+```
+// You can do it!
+hgw.lightsOff()
+// Uh it's nice and dark here!
+// ...
+// I am a little scared let's turn those lights on again.
+hgw.lightsOn()
+```
+

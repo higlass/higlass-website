@@ -41,7 +41,7 @@ function gulpRollup(_options_) {
         if (typeof options === 'function') {
           finalOptions = options(file);
         }
-        finalOptions.entry = _file.path;
+        finalOptions.input = _file.path;
 
         // Needed to adjust in order to include the actual dirname (not just
         // `.`) in order to properly rename modules.
@@ -49,26 +49,25 @@ function gulpRollup(_options_) {
         fileBase.pop();
         _file.base = fileBase.join(path.sep);
 
-        rollup(finalOptions).then((bundle) => {
-          const res = bundle.generate(finalOptions);
-
-          _file.contents = new Buffer(res.code);
-          const map = res.map;
-          if (map) {
-            // This makes sure the paths in the generated source map (file and
-            // sources) are relative to _file.base:
-            map.file = unixStylePath(_file.relative);
-            map.sources = map.sources.map(
-              fileName => unixStylePath(path.relative(_file.base, fileName))
+        rollup(finalOptions)
+          .then(bundle => bundle.generate(finalOptions))
+          .then(({ code, map }) => {
+            _file.contents = Buffer.from(code);
+            if (map) {
+              // This makes sure the paths in the generated source map (file and
+              // sources) are relative to _file.base:
+              map.file = unixStylePath(_file.relative);
+              map.sources = map.sources.map(
+                fileName => unixStylePath(path.relative(_file.base, fileName))
+              );
+              _file.sourceMap = map;
+            }
+            callback(null, _file);
+          }, (err) => {
+            setImmediate(() => callback(
+              new gulpUtils.PluginError(PLUGIN_NAME, err))
             );
-            _file.sourceMap = map;
-          }
-          callback(null, _file);
-        }, (err) => {
-          setImmediate(() => callback(
-            new gulpUtils.PluginError(PLUGIN_NAME, err))
-          );
-        });
+          });
       }
     } catch (err) {
       callback(new gulpUtils.PluginError(PLUGIN_NAME, err));

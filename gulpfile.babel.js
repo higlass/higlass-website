@@ -213,15 +213,18 @@ gulp.task('js', () => gulp
   .pipe(plumber())
   .pipe(sourcemaps.init())
   .pipe(rollup(file => ({
-    banner: `/* Copyright ${packageJson.author}: ${config.jsBundles[
-      path.basename(path.dirname(file.path))
-    ].banner} */`,
-    format: 'umd',
-    globals: config.rollupGlobals,
     external: config.rollupExternals,
-    moduleName: config.jsBundles[
-      path.basename(path.dirname(file.path))
-    ].name,
+    output: {
+      banner: `/* Copyright ${packageJson.author}: ${config.jsBundles[
+        path.basename(path.dirname(file.path))
+      ].banner} */`,
+      format: 'umd',
+      globals: config.rollupGlobals,
+      name: config.jsBundles[
+        path.basename(path.dirname(file.path))
+      ].name,
+      sourcemap: !production
+    },
     plugins: [
       babel({
         babelrc: false,
@@ -242,8 +245,7 @@ gulp.task('js', () => gulp
         jsnext: true,
         browser: true
       })
-    ],
-    sourceMap: !production
+    ]
   })))
   .pipe(rename((bundlePath) => {
     /* eslint-disable no-param-reassign */

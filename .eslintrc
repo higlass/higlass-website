@@ -3,22 +3,18 @@
     "browser": true,
     "es6": true
   },
-  "ecmaFeatures": {
-    "modules": true,
-    "destructuring": true,
-    "classes": true,
-    "forOf": true,
-    "blockBindings": true,
-    "arrowFunctions": true
-  },
   "extends": [
     "airbnb/base"
   ],
   "parser": "babel-eslint",
   "rules": {
     "comma-dangle": ["error", "never"],
+    "function-paren-newline": 0,
     "import/prefer-default-export": 1,
     "no-underscore-dangle": 0,
-    "no-console": 2
+    "no-console": 2,
+    "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
+    "no-param-reassign": ["error", { "props": false }],
+    "prefer-destructuring": 0
   }
 }
