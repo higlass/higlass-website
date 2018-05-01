@@ -21,8 +21,13 @@ const launchHg = (divId, config, bounded) => {
 };
 
 dropJson(document.body, (event) => {
+  if (!event || !event.dataTransfer || !event.dataTransfer.files || !event.dataTransfer.files.length) {
+    return;
+  }
+
   const file = event.dataTransfer.files[0];
   const reader = new FileReader();
+
 
   reader.addEventListener('load', (fileEvent) => {
     let newConfig;
