@@ -60,7 +60,8 @@
     "index.scss"
   ],
   "thirdPartyScripts": [
-    "node_modules/higlass/dist/scripts/hglib.js"
+    "node_modules/higlass/dist/scripts/hglib.js",
+    "node_modules/higlass-multivec/dist/higlass-multivec.min.js"
   ],
   "thirdPartyStyles": [
     "node_modules/higlass/dist/styles/hglib.css"
