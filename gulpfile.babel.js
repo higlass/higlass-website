@@ -275,11 +275,7 @@ gulp.task(
     .pipe(sourcemaps.init())
     // Unglify JavaScript if we start Gulp in production mode. Otherwise
     // concat files only.
-    .pipe(
-      uglify({
-        preserveComments: 'license'
-      })
-    )
+    .pipe(uglify())
     // Append hash to file name in production mode for better cache control
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(`${config.dist}/${config.assets.scripts}`))
