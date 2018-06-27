@@ -242,7 +242,7 @@ gulp.task(
           // ],
           plugins: ['external-helpers'],
           presets: [[
-            'es2015',
+            'env',
             {
               modules: false
             }
