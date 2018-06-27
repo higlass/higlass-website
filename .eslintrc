@@ -3,14 +3,6 @@
     "browser": true,
     "es6": true
   },
-  "ecmaFeatures": {
-    "modules": true,
-    "destructuring": true,
-    "classes": true,
-    "forOf": true,
-    "blockBindings": true,
-    "arrowFunctions": true
-  },
   "extends": [
     "airbnb/base"
   ],
@@ -19,6 +11,7 @@
     "comma-dangle": ["error", "never"],
     "import/prefer-default-export": 1,
     "no-underscore-dangle": 0,
-    "no-console": 2
+    "no-console": 2,
+    "prefer-destructuring": 0
   }
 }
