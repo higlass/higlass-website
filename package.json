@@ -79,8 +79,7 @@
     "rollup-plugin-babel": "2.7.1",
     "rollup-plugin-node-resolve": "2.0.0",
     "run-sequence": "1.2.2",
-    "semver": "5.5.0",
-    "uglify-js": "2.7.5"
+    "semver": "5.5.0"
   },
   "scripts": {
     "build": "gulp build --production",
