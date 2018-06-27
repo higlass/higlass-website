@@ -1,9 +1,3 @@
 {
-  "presets": [
-    "es2015",
-
-    // Stage 2: Draft
-    // https://tc39.github.io/process-document/
-    "stage-2"
-  ]
+  "presets": ["env"]
 }
