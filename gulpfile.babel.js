@@ -38,7 +38,7 @@ import * as packageJson from './package.json';
 
 
 // Flags
-const production = gulpUtil.env.production;  // `--production`
+const production = gulpUtil.env.production; // `--production`
 
 // Start BrowserSync
 const bs = browserSync.create(packageJson.name);
@@ -150,43 +150,51 @@ gulp.task('bump-version', () => {
 
 
 // Cean
-gulp.task('clean', () => gulp
-  .src(config.dist, { read: false })
-  .pipe(plumber())
-  .pipe(clean())
+gulp.task(
+  'clean', () => gulp
+    .src(config.dist, { read: false })
+    .pipe(plumber())
+    .pipe(clean())
 );
 
 
 // Docs
-gulp.task('docs', () => gulp
-  .src(`${config.dist}/${config.docs}/index.html`)
-  .pipe(plumber())
-  .pipe(modify({
-    fileModifier: (file, contents) =>
-      contents.replace('<!-- Wiki goes here -->', wikiHtml)
-  }))
-  .pipe(gulp.dest(`${config.dist}/${config.docs}`))
-  .pipe(bs.reload({ stream: true }))
+gulp.task(
+  'docs',
+  () => gulp
+    .src(`${config.dist}/${config.docs}/index.html`)
+    .pipe(plumber())
+    .pipe(modify({
+      fileModifier: (file, contents) => contents.replace(
+        '<!-- Wiki goes here -->', wikiHtml
+      )
+    }))
+    .pipe(gulp.dest(`${config.dist}/${config.docs}`))
+    .pipe(bs.reload({ stream: true }))
 );
 
 
 // Video
-gulp.task('html', () => gulp
-  .src(`${config.src}/**/*.html`)
-  .pipe(plumber())
-  .pipe(newer(config.dist))
-  .pipe(gulp.dest(config.dist))
-  .pipe(bs.reload({ stream: true }))
+gulp.task(
+  'html',
+  () => gulp
+    .src(`${config.src}/**/*.html`)
+    .pipe(plumber())
+    .pipe(newer(config.dist))
+    .pipe(gulp.dest(config.dist))
+    .pipe(bs.reload({ stream: true }))
 );
 
 
 // Images
-gulp.task('images', () => gulp
-  .src(`${config.src}/${config.assets.images}/**/*.{jpg,png,svg}`)
-  .pipe(plumber())
-  .pipe(newer(`${config.dist}/${config.assets.images}`))
-  .pipe(gulp.dest(`${config.dist}/${config.assets.images}`))
-  .pipe(bs.reload({ stream: true }))
+gulp.task(
+  'images',
+  () => gulp
+    .src(`${config.src}/${config.assets.images}/**/*.{jpg,png,svg}`)
+    .pipe(plumber())
+    .pipe(newer(`${config.dist}/${config.assets.images}`))
+    .pipe(gulp.dest(`${config.dist}/${config.assets.images}`))
+    .pipe(bs.reload({ stream: true }))
 );
 
 
@@ -205,183 +213,195 @@ gulp.task('init-live-reload', () => {
 
 
 // JavaScript
-gulp.task('js', () => gulp
-  .src(
-    getModules(`${config.src}/${config.assets.scripts}`, config.jsBundles),
-    { read: false }
-  )
-  .pipe(plumber())
-  .pipe(sourcemaps.init())
-  .pipe(rollup(file => ({
-    banner: `/* Copyright ${packageJson.author}: ${config.jsBundles[
-      path.basename(path.dirname(file.path))
-    ].banner} */`,
-    format: 'umd',
-    globals: config.rollupGlobals,
-    external: config.rollupExternals,
-    moduleName: config.jsBundles[
-      path.basename(path.dirname(file.path))
-    ].name,
-    plugins: [
-      babel({
-        babelrc: false,
-        // The following unfortunately doesn't work:
-        // exclude: 'node_modules/**',
-        // include: [
-        //   'node_modules/domtastic/**'
-        // ],
-        plugins: ['external-helpers'],
-        presets: [[
-          'es2015',
-          {
-            modules: false
-          }
-        ]]
-      }),
-      nodeResolve({
-        jsnext: true,
-        browser: true
-      })
-    ],
-    sourceMap: !production
-  })))
-  .pipe(rename((bundlePath) => {
-    /* eslint-disable no-param-reassign */
-    bundlePath.basename = bundlePath.dirname;
-    /* eslint-enable no-param-reassign */
-    return bundlePath;
-  }))
-  .pipe(flatten())
-  .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(`${config.dist}/${config.assets.scripts}`))
-  // Exclude everything when we are not in production mode.
-  .pipe(
-    gulpIf(
-      !production,
-      ignore.exclude('*')
+gulp.task(
+  'js',
+  () => gulp
+    .src(
+      getModules(`${config.src}/${config.assets.scripts}`, config.jsBundles),
+      { read: false }
     )
-  )
-  // Init source map
-  .pipe(sourcemaps.init())
-  // Unglify JavaScript if we start Gulp in production mode. Otherwise
-  // concat files only.
-  .pipe(
-    uglify({
-      preserveComments: 'license'
-    })
-  )
-  // Append hash to file name in production mode for better cache control
-  .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(`${config.dist}/${config.assets.scripts}`))
-  // Include only JavaScript files
-  .pipe(ignore.include('*.js'))
-  // Optimize code for speed
-  .pipe(optimize({ sourceMaps: true }))
-  .pipe(gulp.dest(`${config.dist}/${config.assets.scripts}`))
-  .pipe(bs.reload({ stream: true }))
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(rollup(file => ({
+      banner: `/* Copyright ${packageJson.author}: ${config.jsBundles[
+        path.basename(path.dirname(file.path))
+      ].banner} */`,
+      format: 'umd',
+      globals: config.rollupGlobals,
+      external: config.rollupExternals,
+      moduleName: config.jsBundles[
+        path.basename(path.dirname(file.path))
+      ].name,
+      plugins: [
+        babel({
+          babelrc: false,
+          // The following unfortunately doesn't work:
+          // exclude: 'node_modules/**',
+          // include: [
+          //   'node_modules/domtastic/**'
+          // ],
+          plugins: ['external-helpers'],
+          presets: [[
+            'env',
+            {
+              modules: false
+            }
+          ]]
+        }),
+        nodeResolve({
+          jsnext: true,
+          browser: true
+        })
+      ],
+      sourceMap: !production
+    })))
+    .pipe(rename((bundlePath) => {
+      /* eslint-disable no-param-reassign */
+      bundlePath.basename = bundlePath.dirname;
+      /* eslint-enable no-param-reassign */
+      return bundlePath;
+    }))
+    .pipe(flatten())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(`${config.dist}/${config.assets.scripts}`))
+    // Exclude everything when we are not in production mode.
+    .pipe(
+      gulpIf(
+        !production,
+        ignore.exclude('*')
+      )
+    )
+    // Init source map
+    .pipe(sourcemaps.init())
+    // Unglify JavaScript if we start Gulp in production mode. Otherwise
+    // concat files only.
+    .pipe(uglify())
+    // Append hash to file name in production mode for better cache control
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(`${config.dist}/${config.assets.scripts}`))
+    // Include only JavaScript files
+    .pipe(ignore.include('*.js'))
+    // Optimize code for speed
+    .pipe(optimize({ sourceMaps: true }))
+    .pipe(gulp.dest(`${config.dist}/${config.assets.scripts}`))
+    .pipe(bs.reload({ stream: true }))
 );
 
 
 // Copy over specific npm scripts
-gulp.task('js-npm-scripts', () => gulp
-  .src(config.thirdPartyScripts)
-  .pipe(plumber())
-  .pipe(flatten())
-  .pipe(newer(`${config.dist}/${config.assets.scriptsThirdParty}`))
-  .pipe(gulp.dest(`${config.dist}/${config.assets.scriptsThirdParty}`))
-  .pipe(bs.reload({ stream: true }))
+gulp.task(
+  'js-npm-scripts',
+  () => gulp
+    .src(config.thirdPartyScripts)
+    .pipe(plumber())
+    .pipe(flatten())
+    .pipe(newer(`${config.dist}/${config.assets.scriptsThirdParty}`))
+    .pipe(gulp.dest(`${config.dist}/${config.assets.scriptsThirdParty}`))
+    .pipe(bs.reload({ stream: true }))
 );
 
 // Copy over specific npm styles
-gulp.task('css-npm-styles', () => gulp
-  .src(config.thirdPartyStyles)
-  .pipe(plumber())
-  .pipe(flatten())
-  .pipe(newer(`${config.dist}/${config.assets.stylesThirdParty}`))
-  .pipe(gulp.dest(`${config.dist}/${config.assets.stylesThirdParty}`))
-  .pipe(bs.reload({ stream: true }))
+gulp.task(
+  'css-npm-styles',
+  () => gulp
+    .src(config.thirdPartyStyles)
+    .pipe(plumber())
+    .pipe(flatten())
+    .pipe(newer(`${config.dist}/${config.assets.stylesThirdParty}`))
+    .pipe(gulp.dest(`${config.dist}/${config.assets.stylesThirdParty}`))
+    .pipe(bs.reload({ stream: true }))
 );
 
 
 // Third party JS scripts
-gulp.task('js-third-party', () => gulp
-  .src(`${config.src}/${config.assets.scriptsThirdParty}/**/*.js`)
-  .pipe(plumber())
-  .pipe(newer(`${config.dist}/${config.assets.scriptsThirdParty}`))
-  .pipe(gulp.dest(`${config.dist}/${config.assets.scriptsThirdParty}`))
-  .pipe(bs.reload({ stream: true }))
+gulp.task(
+  'js-third-party',
+  () => gulp
+    .src(`${config.src}/${config.assets.scriptsThirdParty}/**/*.js`)
+    .pipe(plumber())
+    .pipe(newer(`${config.dist}/${config.assets.scriptsThirdParty}`))
+    .pipe(gulp.dest(`${config.dist}/${config.assets.scriptsThirdParty}`))
+    .pipe(bs.reload({ stream: true }))
 );
 
 // Third party JS styles
-gulp.task('css-third-party', () => gulp
-  .src(`${config.src}/${config.assets.stylesThirdParty}/**/*.css`)
-  .pipe(plumber())
-  .pipe(newer(`${config.dist}/${config.assets.stylesThirdParty}`))
-  .pipe(gulp.dest(`${config.dist}/${config.assets.stylesThirdParty}`))
-  .pipe(bs.reload({ stream: true }))
+gulp.task(
+  'css-third-party',
+  () => gulp
+    .src(`${config.src}/${config.assets.stylesThirdParty}/**/*.css`)
+    .pipe(plumber())
+    .pipe(newer(`${config.dist}/${config.assets.stylesThirdParty}`))
+    .pipe(gulp.dest(`${config.dist}/${config.assets.stylesThirdParty}`))
+    .pipe(bs.reload({ stream: true }))
 );
 
 
 // Lint Task
-gulp.task('lint', () => gulp
-  .src([
-    `${config.src}/${config.assets.scripts}/**/*.js`,
-    'scripts/**/*.js',
-    'gulpfile.babel.js',
-    `!${config.src}/${config.assets.scripts}/${config.eslintIgnore}/**/*.js`
-  ])
-  .pipe(plumber())
-  .pipe(eslint({
-    // Don't provide special eslint rules in production
-    rules: production ? {} : config.eslintDevRules
-  }))
-  .pipe(eslint.format())
-  .pipe(eslint.failOnError())
+gulp.task(
+  'lint',
+  () => gulp
+    .src([
+      `${config.src}/${config.assets.scripts}/**/*.js`,
+      'scripts/**/*.js',
+      'gulpfile.babel.js',
+      `!${config.src}/${config.assets.scripts}/${config.eslintIgnore}/**/*.js`
+    ])
+    .pipe(plumber())
+    .pipe(eslint({
+      // Don't provide special eslint rules in production
+      rules: production ? {} : config.eslintDevRules
+    }))
+    .pipe(eslint.format())
+    .pipe(eslint.failOnError())
 );
 
 
 // SASS
-gulp.task('sass', () => gulp
-  .src(`${config.src}/${config.assets.styles}/index.scss`)
-  .pipe(plumber())
-  .pipe(flatten())
-  .pipe(sass().on('error', sass.logError))
-  .pipe(gulp.dest(`${config.dist}/${config.assets.styles}`))
-  // Exclude everything when we are not in production mode.
-  .pipe(
-    gulpIf(
-      !production,
-      ignore.exclude('*')
+gulp.task(
+  'sass',
+  () => gulp
+    .src(`${config.src}/${config.assets.styles}/index.scss`)
+    .pipe(plumber())
+    .pipe(flatten())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest(`${config.dist}/${config.assets.styles}`))
+    // Exclude everything when we are not in production mode.
+    .pipe(
+      gulpIf(
+        !production,
+        ignore.exclude('*')
+      )
     )
-  )
-  // Rename file
-  .pipe(sourcemaps.init())
-  // Add vendor prefixes in production mode
-  .pipe(autoprefixer({
-    browsers: config.browsers,
-    cascade: true
-  }))
-  // Minify stylesheet in production mode
-  .pipe(nano({
-    discardComments: {
-      removeAll: true
-    },
-    autoprefixer: false
-  }))
-  // Write sourcemap
-  .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(`${config.dist}/${config.assets.styles}`))
-  .pipe(bs.reload({ stream: true }))
+    // Rename file
+    .pipe(sourcemaps.init())
+    // Add vendor prefixes in production mode
+    .pipe(autoprefixer({
+      browsers: config.browsers,
+      cascade: true
+    }))
+    // Minify stylesheet in production mode
+    .pipe(nano({
+      discardComments: {
+        removeAll: true
+      },
+      autoprefixer: false
+    }))
+    // Write sourcemap
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(`${config.dist}/${config.assets.styles}`))
+    .pipe(bs.reload({ stream: true }))
 );
 
 
 // Video
-gulp.task('videos', () => gulp
-  .src(`${config.src}/${config.assets.videos}/**/*.{mp4,webm}`)
-  .pipe(plumber())
-  .pipe(newer(`${config.dist}/${config.assets.videos}`))
-  .pipe(gulp.dest(`${config.dist}/${config.assets.videos}`))
-  .pipe(bs.reload({ stream: true }))
+gulp.task(
+  'videos',
+  () => gulp
+    .src(`${config.src}/${config.assets.videos}/**/*.{mp4,webm}`)
+    .pipe(plumber())
+    .pipe(newer(`${config.dist}/${config.assets.videos}`))
+    .pipe(gulp.dest(`${config.dist}/${config.assets.videos}`))
+    .pipe(bs.reload({ stream: true }))
 );
 
 
@@ -425,30 +445,34 @@ gulp.task('dev-watch', () => {
 
 
 // Parse wiki's markdown files
-gulp.task('wiki', () => gulp
-  .src(`${config.wiki}/**/*.md`)
-  .pipe(plumber())
-  .pipe(marked(config.markedOptions))
-  .pipe(concat('index.html', { newLine: '\n' }))
-  .pipe(modify({
-    fileModifier: (file, contents) => {
-      // This is bit weird setup but well only grad the content of the
-      // concatenated wiki entries here in order to be able to paste them into
-      // the docs HTML later.
-      wikiHtml = contents;
-      return contents;
-    }
-  }))
-  .pipe(bs.reload({ stream: true }))
+gulp.task(
+  'wiki',
+  () => gulp
+    .src(`${config.wiki}/**/*.md`)
+    .pipe(plumber())
+    .pipe(marked(config.markedOptions))
+    .pipe(concat('index.html', { newLine: '\n' }))
+    .pipe(modify({
+      fileModifier: (file, contents) => {
+        // This is bit weird setup but well only grad the content of the
+        // concatenated wiki entries here in order to be able to paste them into
+        // the docs HTML later.
+        wikiHtml = contents;
+        return contents;
+      }
+    }))
+    .pipe(bs.reload({ stream: true }))
 );
 
 
 // Zip
-gulp.task('zip', () => gulp
-  .src(`${config.dist}/**/*`)
-  .pipe(plumber())
-  .pipe(zip('dist.zip'))
-  .pipe(gulp.dest('.'))
+gulp.task(
+  'zip',
+  () => gulp
+    .src(`${config.dist}/**/*`)
+    .pipe(plumber())
+    .pipe(zip('dist.zip'))
+    .pipe(gulp.dest('.'))
 );
 
 
