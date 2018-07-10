@@ -1,3 +1,6 @@
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1308901.svg)](https://doi.org/10.5281/zenodo.1308901)
+
 # HiGlass Website
 
 > Fast Contact Matrix Visualization for the Web.
