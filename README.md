@@ -45,3 +45,7 @@ $ npm run build
 ```bash
 $ npm version <major|minor|patch> && git push --tags
 ```
+
+### License
+
+The code in this repository is provided under the MIT License.
