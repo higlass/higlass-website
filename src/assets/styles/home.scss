@@ -89,14 +89,14 @@ body.dark-theme .four-third {
   font-size: 0.75em;
   animation-name: anim-slide-right;
   animation-timing-function: linear;
-  animation-delay: 5s;
+  animation-delay: 10s;
   animation-duration: 10s;
 }
 
 .button-shake {
   animation-name: anim-button-shake;
   animation-timing-function: linear;
-  animation-delay: 7s;
+  animation-delay: 12s;
   animation-duration: 0.5s;
-  animation-iteration-count: ;
+  animation-iteration-count: 2;
 }
