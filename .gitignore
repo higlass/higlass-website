@@ -3,8 +3,11 @@ node_modules
 dist
 *.log
 *.lock
+*.swn
 *.swo
 *.swp
 *~
 *.zip
 .idea/
+src/assets/scripts-third-party/
+src/assets/styles-third-party/
