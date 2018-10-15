@@ -10,7 +10,7 @@ const launchHg = (divId, config, bounded) => {
   if (!document.querySelector(divId)) {
     return;
   }
-  hglib.createHgComponent(
+  hglib.viewer(
     document.querySelector(divId),
     config,
     { bounded },
